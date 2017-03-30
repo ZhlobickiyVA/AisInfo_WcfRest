@@ -1,0 +1,34 @@
+﻿Table Department
+	id
+	Name
+	Slname
+	VidDepartment - Федеральный
+				  - Муниципальный
+				  - Региональный
+	IdFrgu
+	Territory
+	Ogrn
+	Inn
+	Adress
+	FIORuk
+	ParentOgv
+	Phone
+	Note
+	Map
+
+
+Table Services
+	Id
+	IdFrgu
+	IdDepartment
+	Name
+	SlName
+	idCategory
+	FlPeople
+	UnPeople
+	IpPeople
+	ParentPeople
+	NoNationaly
+	Text [html]
+	InAis
+	DataAccess

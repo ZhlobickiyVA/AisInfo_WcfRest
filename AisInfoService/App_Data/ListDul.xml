@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<ArrayOfItemDul>
+  <itemDul>
+    <id>01</id>
+    <name>ПАСПОРТ РФ</name>
+  </itemDul>
+  <itemDul>
+    <id>02</id>
+    <name>СВИД О РОЖДЕНИИ</name>
+  </itemDul>
+  <itemDul>
+    <id>03</id> 
+    <name>ПАСПОРТ МОРЯКАС</name>
+  </itemDul>
+  <itemDul>
+    <id>04</id>
+    <name>УДОСТОВЕР ВОЕНСЛУЖ</name>
+  </itemDul>
+  <itemDul>
+    <id>05</id>
+    <name>ВОЕННЫЙ БИЛЕТ</name>
+  </itemDul>
+  <itemDul>
+    <id>06</id>
+    <name>ВРЕМЕН УДОСТОВЕР</name>
+  </itemDul>
+  <itemDul>
+    <id>07</id>
+    <name>СПРАВКА ОБ ОСВОБ</name>
+  </itemDul>
+  <itemDul>
+    <id>08</id>
+    <name>ПАСПОРТ ИН ГРАЖД</name>
+  </itemDul>
+  <itemDul>
+    <id>09</id>
+    <name>ВИД НА ЖИТЕЛЬСТВО</name>
+  </itemDul>
+  <itemDul>
+    <id>10</id>
+    <name>РАЗРЕШ ВРЕМ ПРОЖИВ</name>
+  </itemDul>
+  <itemDul>
+    <id>11</id>
+    <name>УДОСТОВЕР БЕЖЕНЦА</name>
+  </itemDul>
+  <itemDul>
+    <id>12</id>
+    <name>МИГРАЦИОННАЯ КАРТА</name>
+  </itemDul>
+  <itemDul>
+    <id>13</id>
+    <name>ПАСПОРТ СССР</name>
+  </itemDul>
+  <itemDul>
+    <id>14</id>
+    <name>СНИЛС</name>
+  </itemDul>
+  <itemDul>
+    <id>15</id>
+    <name>УДОСТОВ ЛИЧН ГРАЖД РФ</name>
+  </itemDul>
+  <itemDul>
+    <id>21</id>
+    <name>ИНН</name>
+  </itemDul>
+  <itemDul>
+    <id>22</id>
+    <name>ВОДИТ УДОСТОВЕРЕНИЕ</name>
+  </itemDul>
+  <itemDul>
+    <id>24</id>
+    <name>СВИД_РЕГ_ТС</name>
+  </itemDul>
+</ArrayOfItemDul>

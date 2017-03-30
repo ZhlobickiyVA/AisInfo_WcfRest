@@ -1,0 +1,1671 @@
+<?xml version="1.0"?>
+<ArrayOfItemArea >
+  <itemArea>
+    <id>1</id>
+    <Name>УЧАСТОК № 1</Name>
+    <Phone>(тел. 62-86-83)</Phone>
+    <Adress>г. Магадан, 2-ой проезд Горького, д. 5а (каб. № 1,2)</Adress>
+    <Street>
+      <itemStreet>
+        <Name>Болдырева ул.</Name>
+        <House>
+          <string>2а</string>
+          <string>3</string>
+          <string>4</string>
+          <string>5а</string>
+          <string>5б</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Вострецова ул.</Name>
+        <House>
+          <string>2/25</string>
+          <string>3</string>
+          <string>4</string>
+          <string>5</string>
+          <string>6</string>
+          <string>8</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Гагарина	ул.</Name>
+        <House>
+          <string>5а</string>
+          <string>5б</string>
+          <string>7а</string>
+          <string>7б</string>
+          <string>9 - расс</string>
+          <string>9а</string>
+          <string>9б</string>
+          <string>13/61</string>
+          <string>17а - расселен</string>
+          <string>19 - расс</string>
+          <string>19а - расселен</string>
+          <string>21</string>
+          <string>21а</string>
+          <string>23</string>
+          <string>23а</string>
+          <string>23б</string>
+          <string>25а</string>
+          <string>25б</string>
+          <string>27</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Горького ул.</Name>
+        <House>
+          <string>7</string>
+          <string>8</string>
+          <string>11</string>
+          <string>15</string>
+          <string>15а</string>
+          <string>16-б - рас</string>
+          <string>17 - расс</string>
+          <string>17а - расс</string>
+          <string>19</string>
+          <string>19а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Горького пл.</Name>
+        <House>
+          <string>2</string>
+          <string>3</string>
+          <string>3а</string>
+          <string>3б</string>
+          <string>4</string>
+          <string>6</string>
+          <string>7</string>
+          <string>7а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Горького проезд 2-ой</Name>
+        <House>
+          <string>5</string>
+          <string>5/1 - расселен</string>
+          <string>5а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Горького пл. 2</Name>
+        <House>
+          <string>3</string>
+          <string>3а</string>
+          <string>3б</string>
+          <string>4</string>
+          <string>6</string>
+          <string>7</string>
+          <string>7а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Дзержинского ул.</Name>
+        <House>
+          <string>3</string>
+          <string>3а</string>
+          <string>5</string>
+          <string>10</string>
+          <string>12</string>
+          <string>12а</string>
+          <string>14</string>
+          <string>14а</string>
+          <string>20</string>
+          <string>20а - рас</string>
+          <string>21</string>
+          <string>22</string>
+          <string>22а - расселен</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>К.Маркса пр.</Name>
+        <House>
+          <string>4</string>
+          <string>6-а - расселен</string>
+          <string>8</string>
+          <string>11а</string>
+          <string>13</string>
+          <string>14</string>
+          <string>14 кор.1</string>
+          <string>16</string>
+          <string>18</string>
+          <string>20</string>
+          <string>20 кор.1</string>
+          <string>22</string>
+          <string>23</string>
+          <string>25</string>
+          <string>27</string>
+          <string>31/18</string>
+          <string>32</string>
+          <string>33/15</string>
+          <string>34</string>
+          <string>36/20</string>
+          <string>37</string>
+          <string>38</string>
+          <string>39</string>
+          <string>40</string>
+          <string>41</string>
+          <string>43</string>
+          <string>44</string>
+          <string>47</string>
+          <string>47-а - расселен</string>
+          <string>47-в - расселен</string>
+          <string>47-г - расселен</string>
+          <string>49</string>
+          <string>50</string>
+          <string>51</string>
+          <string>54</string>
+          <string>54а</string>
+          <string>56</string>
+          <string>57</string>
+          <string>59</string>
+          <string>61/1</string>
+          <string>62</string>
+          <string>62а</string>
+          <string>62б</string>
+          <string>63/1</string>
+          <string>64</string>
+          <string>65</string>
+          <string>65а</string>
+          <string>65б</string>
+          <string>65в</string>
+          <string>67</string>
+          <string>67а</string>
+          <string>67б</string>
+          <string>71</string>
+          <string>72/2</string>
+          <string>72а</string>
+          <string>73</string>
+          <string>74</string>
+          <string>74а</string>
+          <string>76-общ</string>
+          <string>76а</string>
+          <string>78</string>
+          <string>78а</string>
+          <string>80</string>
+          <string>80а</string>
+          <string>82</string>
+          <string>82а</string>
+          <string>84</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Космонавтов пл.</Name>
+        <House>
+          <string>1/27</string>
+          <string>3/2</string>
+          <string>72</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Пролетарская ул.</Name>
+        <House>
+          <string>16</string>
+          <string>18</string>
+          <string>20а</string>
+          <string>22а</string>
+          <string>24</string>
+          <string>24а</string>
+          <string>26/2</string>
+          <string>26а</string>
+          <string>30</string>
+          <string>32</string>
+          <string>34</string>
+          <string>34 кор. 1</string>
+          <string>36</string>
+          <string>38</string>
+          <string>40</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Пушкина ул.</Name>
+        <House>
+          <string>9</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Транспортная ул.</Name>
+        <House>
+          <string>10</string>
+          <string>11</string>
+          <string>12</string>
+          <string>14</string>
+          <string>17</string>
+          <string>19</string>
+          <string>21</string>
+          <string>25</string>
+          <string>27-общ</string>
+          <string>29</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Школьный пер.</Name>
+        <House>
+          <string>1</string>
+          <string>5-б - зарегистр. н</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+    </Street>
+  </itemArea>
+  <itemArea>
+    <id>2</id>
+    <Name>УЧАСТОК № 2</Name>
+    <Phone>(тел. 62-86-70)</Phone>
+    <Adress>г. Магадан, 2-ой проезд Горького, д. 5а (каб. № 1,2)</Adress>
+    <Street>
+      <itemStreet>
+        <Name>2-ая Сибирская ул.</Name>
+        <House>
+          <string>7 - ветхи</string>
+          <string>18б - расселен</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>2-ой Транспортный	переулок</Name>
+        <House>
+          <string>6</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Арманская	ул.</Name>
+        <House>
+          <string>22</string>
+          <string>29а</string>
+          <string>37/1</string>
+          <string>39 - ветхий</string>
+          <string>40</string>
+          <string>41</string>
+          <string>41а - вет</string>
+          <string>45/2</string>
+          <string>45/4</string>
+          <string>45а - вет</string>
+          <string>45в - зарегистр.</string>
+          <string>49</string>
+          <string>49а</string>
+          <string>51</string>
+          <string>51/1</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Брусничная ул.</Name>
+        <House>
+          <string>28-б - зарегистр. нет</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Верхняя ул.</Name>
+        <House>
+          <string>21</string>
+          <string>25 - ветхий</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Железнодорожный 2-ой пер.</Name>
+        <House>
+          <string>9а - расселен</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Железнодорожный 3-й пер.</Name>
+        <House>
+          <string>11 - расс</string>
+          <string>14</string>
+          <string>23а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Зайцева ул.</Name>
+        <House>
+          <string>1а - ветх</string>
+          <string>9 - расселен</string>
+          <string>22 - ветхий</string>
+          <string>24 - ветхий</string>
+          <string>25</string>
+          <string>25/1</string>
+          <string>25а</string>
+          <string>27</string>
+          <string>27/2 - с 1-30, с 61-76 27/3 29</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Западная	ул.</Name>
+        <House>
+          <string>2</string>
+          <string>14 - ветхий</string>
+          <string>19 - расселен</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Иультинская ул.</Name>
+        <House>
+          <string>49</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Колымское	ш.</Name>
+        <House>
+          <string>9</string>
+          <string>9а</string>
+          <string>9б</string>
+          <string>11</string>
+          <string>11а</string>
+          <string>11б</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Космонавтов	пл.</Name>
+        <House>
+          <string>5</string>
+          <string>5а</string>
+          <string>7</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Кузнечная	ул.</Name>
+        <House>
+          <string>14а</string>
+          <string>16а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Левонабережная	ул.</Name>
+        <House>
+          <string>19</string>
+          <string>23</string>
+          <string>25</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Ленина	ул.</Name>
+        <House>
+          <string>5</string>
+          <string>6</string>
+          <string>7</string>
+          <string>8</string>
+          <string>10</string>
+          <string>11</string>
+          <string>12</string>
+          <string>14</string>
+          <string>16а</string>
+          <string>18а</string>
+          <string>22/2</string>
+          <string>26</string>
+          <string>28</string>
+          <string>30</string>
+          <string>32</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Литейная ул.</Name>
+        <House>
+          <string>27</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Метеостанция	ул.</Name>
+        <House>
+          <string>5а - расс</string>
+          <string>5б - расселен</string>
+          <string>5в - расселен</string>
+          <string>7в</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Морская	ул.</Name>
+        <House>
+          <string>19/18-о</string>
+          <string>19/20</string>
+          <string>22/18</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Парковая	ул.</Name>
+        <House>
+          <string>1</string>
+          <string>2</string>
+          <string>3</string>
+          <string>10</string>
+          <string>21</string>
+          <string>21/1</string>
+          <string>21/2</string>
+          <string>21/3</string>
+          <string>24</string>
+          <string>27</string>
+          <string>27а</string>
+          <string>27б</string>
+          <string>31/10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Пушкина	ул.</Name>
+        <House>
+          <string>4а</string>
+          <string>7</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Речная	ул.</Name>
+        <House>
+          <string>8а-общ</string>
+          <string>12</string>
+          <string>12а</string>
+          <string>12б</string>
+          <string>14</string>
+          <string>14а</string>
+          <string>14б</string>
+          <string>16 - зарег</string>
+          <string>57-общ</string>
+          <string>59</string>
+          <string>59/3</string>
+          <string>61/2</string>
+          <string>61/3</string>
+          <string>61/4</string>
+          <string>63</string>
+          <string>63/1</string>
+          <string>63/2</string>
+          <string>63/3</string>
+          <string>63/4</string>
+          <string>65</string>
+          <string>65/1</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Скуридина	ул.</Name>
+        <House>
+          <string>1/23</string>
+          <string>3</string>
+          <string>4</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Советская	ул.</Name>
+        <House>
+          <string>5</string>
+          <string>7</string>
+          <string>19/1</string>
+          <string>20 - кондомин</string>
+          <string>21</string>
+          <string>23</string>
+          <string>23 к.1</string>
+          <string>28</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Солдатенко	ул.</Name>
+        <House>
+          <string>4а</string>
+          <string>6 - ветхий</string>
+          <string>6а - ветхий</string>
+          <string>8а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Чубарова	ул.</Name>
+        <House>
+          <string>3 - доля</string>
+          <string>4</string>
+          <string>4а</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>8 - рассел</string>
+          <string>8а</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Ш.Шимича	ул.</Name>
+        <House>
+          <string>3</string>
+          <string>3/1</string>
+          <string>3/2</string>
+          <string>3/3</string>
+          <string>7/3</string>
+          <string>8 - ветхий</string>
+          <string>9</string>
+          <string>9/2</string>
+          <string>10 - ветхий</string>
+          <string>11</string>
+          <string>11/1</string>
+          <string>11/3</string>
+          <string>12 - ветхий</string>
+          <string>13 - вет</string>
+          <string>14</string>
+          <string>15</string>
+          <string>16</string>
+          <string>16б</string>
+          <string>17</string>
+          <string>17а</string>
+          <string>20</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Швейников	пер.</Name>
+        <House>
+          <string>15</string>
+          <string>17</string>
+          <string>17а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Энергостроителей	ул.</Name>
+        <House>
+          <string>3 - ветхи</string>
+          <string>3/1 - ветхий</string>
+          <string>3г</string>
+          <string>3д - ветхий</string>
+          <string>3е</string>
+          <string>4 - ветхий</string>
+          <string>5б</string>
+          <string>6 - ветхий</string>
+          <string>6/1 - ветхий</string>
+          <string>6/2</string>
+          <string>7</string>
+          <string>7 к.1</string>
+          <string>7а - ветхий</string>
+          <string>7б - вет</string>
+          <string>8 - ветхий</string>
+          <string>8/1 - вет</string>
+          <string>8 к.2</string>
+          <string>9</string>
+          <string>9/1</string>
+          <string>9/2</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Южная	ул.</Name>
+        <House>
+          <string>1а</string>
+          <string>3а - расселен</string>
+        </House>
+      </itemStreet>
+    </Street>
+  </itemArea>
+  <itemArea>
+    <id>3</id>
+    <Name>УЧАСТОК № 3</Name>
+    <Phone>(тел. 65-35-62)</Phone>
+    <Adress>г. Магадан, ул. Горького, д. 16 (каб. № 103)</Adress>
+    <Street>
+      <itemStreet>
+        <Name>Гагарина ул.</Name>
+        <House>
+          <string>10/31</string>
+          <string>14а</string>
+          <string>14б</string>
+          <string>14в</string>
+          <string>14г</string>
+          <string>15</string>
+          <string>16</string>
+          <string>16а</string>
+          <string>22</string>
+          <string>28б</string>
+          <string>28в</string>
+          <string>30б</string>
+          <string>30в</string>
+          <string>32б</string>
+          <string>32в</string>
+          <string>33</string>
+          <string>35</string>
+          <string>36</string>
+          <string>38</string>
+          <string>40</string>
+          <string>44/1</string>
+          <string>46</string>
+          <string>46а</string>
+          <string>46б</string>
+          <string>46в</string>
+          <string>48</string>
+          <string>50</string>
+          <string>52</string>
+          <string>54</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Заводской	пер. </Name>
+        <House>
+          <string>5</string>
+          <string>5а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Лукса	ул.</Name>
+        <House>
+          <string>1</string>
+          <string>2</string>
+          <string>3</string>
+          <string>4</string>
+          <string>4а</string>
+          <string>4б</string>
+          <string>5</string>
+          <string>6</string>
+          <string>8</string>
+          <string>9</string>
+          <string>10</string>
+          <string>10а </string>
+          <string>11</string>
+          <string>12</string>
+          <string>13</string>
+          <string>14</string>
+          <string>15</string>
+          <string>15а </string>
+          <string>17а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Н.р.Магаданки	ул.</Name>
+        <House>
+          <string>13</string>
+          <string>15 к.1</string>
+          <string>43/2</string>
+          <string>57/1</string>
+          <string>59</string>
+          <string>61</string>
+          <string>65/1</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Наровчатова	ул.</Name>
+        <House>
+          <string>3</string>
+          <string>3/1</string>
+          <string>4</string>
+          <string>4а</string>
+          <string>5</string>
+          <string>5/1</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>7</string>
+          <string>7а</string>
+          <string>8</string>
+          <string> 9а</string>
+          <string> 9в</string>
+          <string> 11/69</string>
+          <string> 16</string>
+          <string> 17</string>
+          <string> 19</string>
+          <string> 20</string>
+          <string> 21</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Якутская	ул.</Name>
+        <House>
+          <string>3</string>
+          <string>4</string>
+          <string>4а</string>
+          <string>5</string>
+          <string>5/1</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>7</string>
+          <string>9</string>
+          <string>10</string>
+          <string>14</string>
+          <string>39</string>
+          <string>41</string>
+          <string>41а</string>
+          <string>43</string>
+          <string>43а</string>
+          <string>45</string>
+          <string>48</string>
+          <string>51</string>
+          <string>51б</string>
+          <string>51в</string>
+          <string>51 к.1 </string>
+          <string>54</string>
+          <string>55</string>
+          <string>58/18</string>
+          <string>59</string>
+          <string>60</string>
+          <string>64а</string>
+          <string>66а</string>
+          <string>67</string>
+          <string>68</string>
+          <string>69б</string>
+        </House>
+      </itemStreet>
+    </Street>
+  </itemArea>
+  <itemArea>
+    <id>3</id>
+    <Name>УЧАСТОК № 3</Name>
+    <Phone>(тел. 62-94-56)</Phone>
+    <Adress>г. Магадан, ул. Горького, д. 16 (каб. № 108)</Adress>
+    <Street>
+      <itemStreet>
+        <Name>Кольцевая	ул.</Name>
+        <House>
+          <string>8 - рассе</string>
+          <string>10</string>
+          <string>14</string>
+          <string>22</string>
+          <string>26</string>
+          <string>28</string>
+          <string>28а</string>
+          <string>30а</string>
+          <string>34б</string>
+          <string>34в</string>
+          <string>34г</string>
+          <string>36</string>
+          <string>36/1</string>
+          <string>36а</string>
+          <string>38</string>
+          <string>38а</string>
+          <string>38б</string>
+          <string>40</string>
+          <string>44</string>
+          <string>46</string>
+          <string>48</string>
+          <string>48а</string>
+          <string>50</string>
+          <string>52</string>
+          <string>52а</string>
+          <string>56</string>
+          <string>58</string>
+          <string>64а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Марчеканская	ул. </Name>
+        <House>
+          <string>2</string>
+          <string>2а</string>
+          <string>2 к.1</string>
+          <string>2/1</string>
+          <string>4</string>
+          <string>6</string>
+          <string>15</string>
+          <string>16</string>
+          <string>17</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Марчеканский	пер.</Name>
+        <House>
+          <string>5</string>
+          <string>7</string>
+          <string>7а</string>
+          <string>7а-общ</string>
+          <string>9</string>
+          <string>11-общ</string>
+          <string>13</string>
+          <string>15</string>
+          <string>15/1</string>
+          <string>15в</string>
+          <string>15г</string>
+          <string>17</string>
+          <string>17-общ</string>
+          <string>17б</string>
+          <string>17в</string>
+          <string>19</string>
+          <string>19а</string>
+          <string>37</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Марчеканское	ш.</Name>
+        <House>
+          <string>5</string>
+          <string>7</string>
+          <string>8 - расселен</string>
+          <string>9</string>
+          <string>10</string>
+          <string>10 к.1</string>
+          <string>11</string>
+          <string>12 - рассе</string>
+          <string>13</string>
+          <string>15</string>
+          <string>16</string>
+          <string>17</string>
+          <string>18</string>
+          <string>20</string>
+          <string>22/2</string>
+          <string>24</string>
+          <string>26</string>
+          <string>28</string>
+          <string>28а</string>
+          <string>34/1</string>
+          <string>36</string>
+          <string>38</string>
+          <string>38а</string>
+          <string>38а к.3</string>
+        </House>
+      </itemStreet>
+    </Street>
+  </itemArea>
+  <itemArea>
+    <id>4</id>
+    <Name>УЧАСТОК № 4</Name>
+    <Phone>(тел. 65-35-62)</Phone>
+    <Adress>г. Магадан, ул. Горького, д. 16 (каб. № 102)</Adress>
+    <Street>
+      <itemStreet>
+        <Name>Билибина	ул. </Name>
+        <House>
+          <string>2</string>
+          <string>3</string>
+          <string>5</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>11</string>
+          <string>13</string>
+          <string>14</string>
+          <string>15</string>
+          <string>16</string>
+          <string>18</string>
+          <string>22</string>
+          <string>24</string>
+          <string>26</string>
+          <string>29</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Гагарина ул.</Name>
+        <House>
+          <string>2</string>
+          <string>2а</string>
+          <string>4</string>
+          <string>4а</string>
+          <string>6</string>
+          <string>6а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Загородная 2-ая	ул.</Name>
+        <House>
+          <string>9</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Загородный пр.</Name>
+        <House>
+          <string>3</string>
+          <string>8</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Загородный 1-й пер.</Name>
+        <House>
+          <string>1</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Зеленая	ул.</Name>
+        <House>
+          <string>4б</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Клубная	ул.</Name>
+        <House>
+          <string>20а</string>
+          <string>30</string>
+          <string>40/40</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Коммуны	ул.</Name>
+        <House>
+          <string>2</string>
+          <string>3</string>
+          <string>5</string>
+          <string>7</string>
+          <string>9</string>
+          <string>10</string>
+          <string>11</string>
+          <string>12</string>
+          <string>13</string>
+          <string>13а</string>
+          <string>15</string>
+          <string>17</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Комсомольская	пл.</Name>
+        <House>
+          <string>2</string>
+          <string>4</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Комсомольская	ул.</Name>
+        <House>
+          <string>33б</string>
+          <string>35б</string>
+          <string>37б</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Нагаевская ул.</Name>
+        <House>
+          <string>46</string>
+          <string>51</string>
+          <string>51б</string>
+          <string>53</string>
+          <string>55</string>
+          <string>57</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Новая	ул.</Name>
+        <House>
+          <string>17</string>
+          <string>23</string>
+          <string>27а</string>
+          <string>27б</string>
+          <string>29б</string>
+          <string>29в</string>
+          <string>34а</string>
+          <string>36</string>
+          <string>38</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Ново-Нагаевская	ул. </Name>
+        <House>
+          <string>6</string>
+          <string>8</string>
+          <string>19</string>
+          <string>20</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Октябрьская	ул.</Name>
+        <House>
+          <string>6</string>
+          <string>9</string>
+          <string>10 - не наше кв 43-98</string>
+          <string>20</string>
+          <string>20/1</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Полярная ул.</Name>
+        <House>
+          <string>1</string>
+          <string>2/1</string>
+          <string>3</string>
+          <string>4/1</string>
+          <string>4/20</string>
+          <string>5</string>
+          <string>6/17</string>
+          <string>7</string>
+          <string>8</string>
+          <string>9</string>
+          <string>11</string>
+          <string>15</string>
+          <string>21</string>
+          <string>23</string>
+          <string>23-общ</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Портовая ул.</Name>
+        <House>
+          <string>1</string>
+          <string>3</string>
+          <string>3а</string>
+          <string>4</string>
+          <string>5</string>
+          <string>5а</string>
+          <string>5б</string>
+          <string>5в</string>
+          <string>5г</string>
+          <string>5д</string>
+          <string>5е</string>
+          <string>7</string>
+          <string>7а</string>
+          <string>7б</string>
+          <string>7б-общ </string>
+          <string>9</string>
+          <string>11/2</string>
+          <string>13а</string>
+          <string>23-б</string>
+          <string>25/21</string>
+          <string>26 к.1 </string>
+          <string>27</string>
+          <string>27/1</string>
+          <string>29</string>
+          <string>31/12</string>
+          <string>33</string>
+          <string>38</string>
+          <string>15</string>
+          <string>15а</string>
+          <string>17</string>
+          <string>19</string>
+          <string>19б</string>
+          <string>21</string>
+          <string>21а</string>
+          <string>23</string>
+          <string>23-а</string>
+          <string>38 к.2</string>
+          <string>38 к.3</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Потапова	ул.</Name>
+        <House>
+          <string>9</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Приморская	ул.</Name>
+        <House>
+          <string>1</string>
+          <string>1а</string>
+          <string>7</string>
+          <string>7 к.1	</string>
+          <string>7 к.2</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Флотская	ул.</Name>
+        <House>
+          <string>4</string>
+          <string>6</string>
+          <string>6 к.1</string>
+          <string>6 к.1-общ</string>
+          <string>6 к.2</string>
+          <string>7</string>
+          <string>8</string>
+          <string>20/8</string>
+          <string>22</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Широкая	ул.</Name>
+        <House>
+          <string>3</string>
+          <string>5</string>
+          <string>21 - расселен</string>
+          <string>44</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Ясная	ул. </Name>
+        <House>
+          <string>3</string>
+          <string>5а (арх)</string>
+          <string>8</string>
+          <string>9</string>
+          <string>12</string>
+          <string>14</string>
+        </House>
+      </itemStreet>
+    </Street>
+  </itemArea>
+  <itemArea>
+    <id>5</id>
+    <Name>УЧАСТОК № 5</Name>
+    <Phone>(тел. 60-44-50)</Phone>
+    <Adress>г. Магадан, Набережная реки Магаданки, д. 55</Adress>
+    <Street>
+      <itemStreet>
+        <Name>Бассейновый	пер. </Name>
+        <House>
+          <string>10</string>
+          <string>10а</string>
+          <string>10б</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Веселый	пр.</Name>
+        <House>
+          <string>4-общ</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Веселый ключ	ул.</Name>
+        <House>
+          <string>4 - рассе</string>
+          <string>6</string>
+          <string>10 - расселен</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Гертнера	ул.</Name>
+        <House>
+          <string>6-б -кв 6</string>
+          <string>12а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Дальняя	ул. </Name>
+        <House>
+          <string>7</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Дачная	ул.</Name>
+        <House>
+          <string>11/4</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Лесная	ул.</Name>
+        <House>
+          <string>3</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Магаданская	ул.</Name>
+        <House>
+          <string>6</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Н.р.Магаданки	ул.</Name>
+        <House>
+          <string>1</string>
+          <string>3</string>
+          <string>5</string>
+          <string>12</string>
+          <string>13/1</string>
+          <string>15</string>
+          <string>15 к.2</string>
+          <string>15 к.3</string>
+          <string>15 к.4</string>
+          <string>43 к.1</string>
+          <string>45</string>
+          <string>45 к.1</string>
+          <string>47</string>
+          <string>49</string>
+          <string>49 к.1</string>
+          <string>51</string>
+          <string>51 к.2</string>
+          <string>53</string>
+          <string>55</string>
+          <string>55 к.1</string>
+          <string>55 к.2</string>
+          <string>55 к.3</string>
+          <string>55 к.4</string>
+          <string>57</string>
+          <string>57 к.2</string>
+          <string>57 к.3</string>
+          <string>59 к.1</string>
+          <string>63</string>
+          <string>65</string>
+          <string>65 к.2</string>
+          <string>65 к.3</string>
+          <string>67</string>
+          <string>69</string>
+          <string>71</string>
+          <string>71 к.2</string>
+          <string>71 к.3</string>
+          <string>71 к.4</string>
+          <string>73</string>
+          <string>73 к.2</string>
+          <string>73 к.3</string>
+          <string>73 к.4</string>
+          <string>75 к.2</string>
+          <string>79</string>
+          <string>81</string>
+          <string>83</string>
+          <string>85</string>
+          <string>87</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Первомайская	ул.</Name>
+        <House>
+          <string>13</string>
+          <string>14</string>
+          <string>15</string>
+          <string>16</string>
+          <string>18 - рас</string>
+          <string>19</string>
+          <string>20</string>
+          <string>23</string>
+          <string>24</string>
+          <string>25</string>
+          <string>26</string>
+          <string>27</string>
+          <string>28</string>
+          <string>46 - расселен</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Подгорная	ул. </Name>
+        <House>
+          <string>8 - рассе</string>
+          <string>11  - кв 2 ком 1+2</string>
+          <string>12 - расселен</string>
+          <string>12/1</string>
+          <string>13</string>
+          <string>15 - расс</string>
+          <string>15/1</string>
+          <string>17 - расселен</string>
+          <string>19</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Пролетарская	ул.</Name>
+        <House>
+          <string>1</string>
+          <string>1а</string>
+          <string>2</string>
+          <string>3а</string>
+          <string>3/1</string>
+          <string>3/2</string>
+          <string>3/3</string>
+          <string>4</string>
+          <string>25 к.4</string>
+          <string>42/1</string>
+          <string>44</string>
+          <string>46</string>
+          <string>46/1</string>
+          <string>46/2</string>
+          <string>50/1</string>
+          <string>50/2</string>
+          <string>55</string>
+          <string>55/1</string>
+          <string>57</string>
+          <string>59</string>
+          <string>59/1</string>
+          <string>61</string>
+          <string>61/1</string>
+          <string>61/2</string>
+          <string>61/3</string>
+          <string>61/4</string>
+          <string>61/4а</string>
+          <string>61/5</string>
+          <string>63 к.1</string>
+          <string>65 к.1</string>
+          <string>65 к.2</string>
+          <string>65 к.3</string>
+          <string>68а</string>
+          <string>70</string>
+          <string>70а    </string>
+          <string>71 к.1 </string>
+          <string>71 к.2 </string>
+          <string>72     </string>
+          <string>74     </string>
+          <string>75     </string>
+          <string>76     </string>
+          <string>78     </string>
+          <string>79     </string>
+          <string>79 к.1 </string>
+          <string>79 к.2</string>
+          <string>80</string>
+          <string>80а</string>
+          <string>81 - с 1 по 165 кв</string>
+          <string>81 к.1 </string>
+          <string>81 к.2 </string>
+          <string>82</string>
+          <string>84</string>
+          <string>86</string>
+          <string>88</string>
+          <string>90/2</string>
+          <string>108/6</string>
+          <string>108 к.1</string>
+          <string>112</string>
+          <string>112 к.1</string>
+          <string>114 к.1</string>
+          <string>114 к.2</string>
+          <string>116</string>
+          <string>116 к.1</string>
+          <string>118 к.2</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Пролетарский 2-ой	пер.</Name>
+        <House>
+          <string>6а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Промышленный	проезд</Name>
+        <House>
+          <string>7</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Репина	ул.</Name>
+        <House>
+          <string>1</string>
+          <string>3</string>
+          <string>5</string>
+          <string>9</string>
+          <string>12</string>
+          <string>13</string>
+          <string>14</string>
+          <string>16</string>
+          <string>19</string>
+          <string>21</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Рыбозаводская	ул.</Name>
+        <House>
+          <string>1б</string>
+          <string>1/4</string>
+          <string>1/4а</string>
+          <string>2в</string>
+          <string>2г</string>
+          <string>6 - рассел</string>
+          <string>8а</string>
+          <string>14</string>
+          <string>15 - расселен</string>
+          <string>16</string>
+          <string>19а</string>
+          <string>21а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Рыбозаводской	пер.</Name>
+        <House>
+          <string>4</string>
+          <string>5 - расселен</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Санаторная	ул.</Name>
+        <House>
+          <string>15</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Совхозная 1-ая	ул. </Name>
+        <House>
+          <string>2 к.1</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Совхозная 2-ая	ул.</Name>
+        <House>
+          <string>6 - 1 лиц. счет</string>
+        </House>
+      </itemStreet>
+    </Street>
+  </itemArea>
+  <itemArea>
+    <id>6</id>
+    <Name>УЧАСТОК № 6</Name>
+    <Phone>(тел. 64-29-31)</Phone>
+    <Adress>г. Магадан, ул. Попова, д. 7, корп. 4</Adress>
+    <Street>
+      <itemStreet>
+        <Name>14/3- км. Основной трассы-об</Name>
+        <House>
+          <string />
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>2-ая Транспортная	ул.</Name>
+        <House>
+          <string>16</string>
+          <string>23</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Авиационная	ул.</Name>
+        <House>
+          <string>3</string>
+          <string>10</string>
+          <string>11</string>
+          <string>11а</string>
+          <string>14</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Аммональная	ул.</Name>
+        <House>
+          <string>17</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Береговая	ул.</Name>
+        <House>
+          <string>10</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Берзина	ул.</Name>
+        <House>
+          <string>2</string>
+          <string>3</string>
+          <string>3а</string>
+          <string>3б</string>
+          <string>3в</string>
+          <string>4</string>
+          <string>4/1</string>
+          <string>4/2</string>
+          <string>5</string>
+          <string>5а</string>
+          <string>5б</string>
+          <string>5в</string>
+          <string>6</string>
+          <string>7</string>
+          <string>7а</string>
+          <string>7в</string>
+          <string>8</string>
+          <string>9</string>
+          <string>9а</string>
+          <string>9в</string>
+          <string>11</string>
+          <string>11а</string>
+          <string>11б</string>
+          <string>11в</string>
+          <string>13</string>
+          <string>13а</string>
+          <string>13б</string>
+          <string>17</string>
+          <string>17а</string>
+          <string>17б</string>
+          <string>19</string>
+          <string>19а</string>
+          <string>19б</string>
+          <string>21</string>
+          <string>21а</string>
+          <string>21б</string>
+          <string>23</string>
+          <string>27</string>
+          <string>29</string>
+          <string>31</string>
+          <string>33</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>ДОС-1</Name>
+        <House>
+          <string />
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Колымская	ул.</Name>
+        <House>
+          <string>1б</string>
+          <string>5</string>
+          <string>6</string>
+          <string>6 к.1</string>
+          <string>6 к.2</string>
+          <string>6 к.3</string>
+          <string>7 к.1</string>
+          <string>8 к.1</string>
+          <string>9</string>
+          <string>9а</string>
+          <string>9б</string>
+          <string>10/1</string>
+          <string>10/2</string>
+          <string>10а</string>
+          <string>10б</string>
+          <string>10в</string>
+          <string>11</string>
+          <string>11а</string>
+          <string>12</string>
+          <string>12 к.1</string>
+          <string>12а</string>
+          <string>14</string>
+          <string>14а</string>
+          <string>15</string>
+          <string>15а</string>
+          <string>16</string>
+          <string>16а</string>
+          <string>17а/1</string>
+          <string>17а/2</string>
+          <string>17в</string>
+          <string>18</string>
+          <string>18а</string>
+          <string>20</string>
+          <string>20-а</string>
+          <string>22</string>
+          <string>24</string>
+          <string>26</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Колымское	ш.</Name>
+        <House>
+          <string>4</string>
+          <string>4 к.1</string>
+          <string>4 к.2</string>
+          <string>4 к.3</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>8а</string>
+          <string>8/2</string>
+          <string>8 к.3</string>
+          <string>10в</string>
+          <string>11 к.1</string>
+          <string>12</string>
+          <string>13</string>
+          <string>14</string>
+          <string>14 к.1</string>
+          <string>14 к.2</string>
+          <string>14 к.3</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>ЛОС</Name>
+        <House>
+          <string>1</string>
+          <string>2</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Майская	ул.</Name>
+        <House>
+          <string>5</string>
+          <string>8а</string>
+          <string>10а</string>
+          <string>12а</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Пионерская	ул.</Name>
+        <House>
+          <string>1</string>
+          <string>2а</string>
+          <string>3</string>
+          <string>3 к.1</string>
+          <string>6</string>
+          <string>13</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Попова	ул.</Name>
+        <House>
+          <string>2</string>
+          <string>2 к.1</string>
+          <string>2а</string>
+          <string>2в</string>
+          <string>2г</string>
+          <string>3</string>
+          <string>3 к.1</string>
+          <string>3 к.2</string>
+          <string>3 к.3</string>
+          <string>4</string>
+          <string>4а</string>
+          <string>5</string>
+          <string>5 к.1</string>
+          <string>5 к.2</string>
+          <string>5 к.3</string>
+          <string>6</string>
+          <string>6а</string>
+          <string>7</string>
+          <string>7 к.1</string>
+          <string>7 к.2</string>
+          <string>7 к.3</string>
+          <string>7 к.4</string>
+          <string>7 к.5</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Радистов	ул.</Name>
+        <House>
+          <string>2</string>
+          <string>3</string>
+          <string>6</string>
+          <string>7</string>
+          <string>8</string>
+          <string>9</string>
+          <string>11</string>
+          <string>13</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Раздольная	ул.</Name>
+        <House>
+          <string>2</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Садовая	ул.</Name>
+        <House>
+          <string>3</string>
+          <string>9</string>
+          <string>11</string>
+          <string>13</string>
+          <string>15</string>
+          <string>25а</string>
+          <string>27</string>
+          <string>27а</string>
+          <string>27б</string>
+          <string>29</string>
+          <string>31</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Снежная	ул.</Name>
+        <House>
+          <string>51</string>
+          <string>52</string>
+          <string>54</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Шмелева	ул. </Name>
+        <House>
+          <string>1</string>
+          <string>2</string>
+          <string>3</string>
+          <string>10/а</string>
+          <string>11/а</string>
+          <string>13</string>
+          <string>19</string>
+          <string>22</string>
+        </House>
+      </itemStreet>
+      <itemStreet>
+        <Name>Ямская	ул.</Name>
+        <House>
+          <string>2</string>
+          <string>4</string>
+          <string>6</string>
+          <string>8</string>
+          <string>10</string>
+        </House>
+      </itemStreet>
+    </Street>
+  </itemArea>
+</ArrayOfItemArea>
