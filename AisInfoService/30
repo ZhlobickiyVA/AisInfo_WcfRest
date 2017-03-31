@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<ArrayOfOrganGV xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <OrganGV>
+    <Id>0</Id>
+    <NameOgv>УФК  по Магаданской области (УМВД России по Магаданской обл.,л/сч 04471246420)</NameOgv>
+    <PayeeInn>4909045951</PayeeInn>
+    <PersonalAcc>40101810300000010001</PersonalAcc>
+    <Bic>044442001</Bic>
+    <BankName>ОТДЕЛЕНИЕ МАГАДАН</BankName>
+    <Oktmo>44701000</Oktmo>
+    <Kpp>490901001</Kpp>
+    <CorrespAcc>00000000000000000000</CorrespAcc>
+    <Purpose>
+      <Purpose>
+        <Id>0</Id>
+        <Name>МФЦ Внесение изм-ний в загранпаспорт 500руб.</Name>
+        <Kbk>18810806000018007110</Kbk>
+        <Sum>50000</Sum>
+      </Purpose>
+      <Purpose>
+        <Id>1</Id>
+        <Name>МФЦ Загранпаспорт 2000руб.</Name>
+        <Kbk>18810806000018003110</Kbk>
+        <Sum>200000</Sum>
+      </Purpose>
+      <Purpose>
+        <Id>2</Id>
+        <Name>МФЦ Внесение изм-ний в загранпаспорт 500руб.</Name>
+        <Kbk>18810806000018005110</Kbk>
+        <Sum>100000</Sum>
+      </Purpose>
+      <Purpose>
+        <Id>3</Id>
+        <Name>МФЦ Паспорт рф в замен утрач 1500руб.</Name>
+        <Kbk>8810807100018035110</Kbk>
+        <Sum>150000</Sum>
+      </Purpose>
+      <Purpose>
+        <Id>4</Id>
+        <Name>МФЦ Паспорт рф выдача 300руб.</Name>
+        <Kbk>18810807100018034110</Kbk>
+        <Sum>30000</Sum>
+      </Purpose>
+    </Purpose>
+  </OrganGV>
+  <OrganGV>
+    <Id>1</Id>
+    <NameOgv>ЗАГС ТЕСТ</NameOgv>
+    <PayeeInn>4909045951</PayeeInn>
+    <PersonalAcc>40101810300000010001</PersonalAcc>
+    <Bic>044442001</Bic>
+    <BankName>ОТДЕЛЕНИЕ МАГАДАН</BankName>
+    <Oktmo>44701000</Oktmo>
+    <Kpp>490901001</Kpp>
+    <CorrespAcc>00000000000000000000</CorrespAcc>
+    <Purpose>
+      <Purpose>
+        <Id>0</Id>
+        <Name>ТЕСТ 1 МФЦ Внесение изм-ний в загранпаспорт 500руб.</Name>
+        <Kbk>18810806000018007110</Kbk>
+        <Sum>50000</Sum>
+      </Purpose>
+      <Purpose>
+        <Id>1</Id>
+        <Name>ТЕСТ 2 МФЦ Загранпаспорт 2000руб.</Name>
+        <Kbk>18810806000018003110</Kbk>
+        <Sum>200000</Sum>
+      </Purpose>
+      <Purpose>
+        <Id>2</Id>
+        <Name>ТЕСТ 3 МФЦ Внесение изм-ний в загранпаспорт 500руб.</Name>
+        <Kbk>18810806000018005110</Kbk>
+        <Sum>100000</Sum>
+      </Purpose>
+    </Purpose>
+  </OrganGV>
+</ArrayOfOrganGV>

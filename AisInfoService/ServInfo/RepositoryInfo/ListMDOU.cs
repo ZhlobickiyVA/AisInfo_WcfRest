@@ -333,6 +333,7 @@ namespace AisInfoService
 
     private ItemMdou[] GetData()
     {
+      
       string Path = ConfigurationManager.AppSettings["PathListMdou"];
       using (FileStream fs = new FileStream(HttpContext.Current.Server.MapPath(Path), FileMode.Open
           , FileAccess.Read, FileShare.Read, bufferSize: 4096, useAsync: true))

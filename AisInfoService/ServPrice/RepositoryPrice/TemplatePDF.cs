@@ -28,9 +28,16 @@ namespace AisInfoService
 
     string StrSumma = "";
 
-    public TemplatePDF(InfoPdf info, ModelPrice modelprice)
+    public TemplatePDF(InfoPdf info, ModelPrice modelprice,bool isData = true)
     {
-      this.Info = info;
+      if (isData) this.Info = info;
+      else
+      {
+        this.Info.IndexOrgan = info.IndexOrgan;
+        this.Info.IndexPurpose = info.IndexPurpose;
+
+      }
+
       this.modelPrice = modelprice;
       this.organ = this.modelPrice.Listdata[Convert.ToInt32(info.IndexOrgan)];
       this.purpose = this.organ.Purpose[Convert.ToInt32(info.IndexPurpose)];
@@ -48,6 +55,7 @@ namespace AisInfoService
 
       string Rub = "";
       string Kop = "";
+      purpose.Sum = purpose.Sum.Trim();
       Rub = purpose.Sum.Substring(0, purpose.Sum.Length - 2);
       Kop = purpose.Sum.Substring(purpose.Sum.Length - 2, 2);
       StrSumma = String.Format("Сумма: {0} руб. {1} коп.", Rub, Kop);
@@ -190,11 +198,11 @@ namespace AisInfoService
       };
       table.AddCell(Cell);
 
-      if (Info.LastName != "")
+      if (Info.LastName != "" && Info.LastName != null)
         NamePrice = String.Format("ФИО: {3} {4} {5}; Адрес: {6}; Назначение: {0}; КБК:{1};      ОКТМО: {2};", purpose.Name, purpose.Kbk, organ.Oktmo, Info.LastName
         , Info.FirstName, Info.MiddleName, Info.PayerAdress);
       else
-        NamePrice = String.Format("Назначение: {0}; КБК:{1};      ОКТМО: {2};", purpose.Name, purpose.Kbk, organ.Oktmo);
+        NamePrice = String.Format("Назначение: {0}; КБК:{1};    \n  ОКТМО: {2};", purpose.Name, purpose.Kbk, organ.Oktmo);
 
 
       Cell = new PdfPCell(new Phrase(NamePrice, fgFont))
@@ -297,7 +305,7 @@ namespace AisInfoService
           + "|OKTMO=" + organ.Oktmo
           + "|Purpose=" + purpose.Name;
 
-      if (Info.LastName != "")
+      if (Info.LastName != "" && Info.LastName != null)
       {
         strRUS = strRUS + "|LASTNAME=" + Info.LastName + " " + Info.FirstName + " " + Info.MiddleName
          + "|PayerAddress=" + Info.PayerAdress

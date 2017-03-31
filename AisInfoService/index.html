@@ -102,9 +102,7 @@
                 <li><a href="ServPrice.svc/json/Connect">Test - Connect  JSON</a></li>
                 <li><a href="ServPrice.svc/json/ListOGV">Test - ListOGV  JSON</a></li>
                 <li><a href="ServPrice.svc/json/ListDul">Test - ListDUL  JSON</a></li>
-                <li><a href="ServPrice.svc/json/ListPurpose?idOgv=0">Test - ListPurpose id 0  JSON</a></li>
                 <li><a href="ServPrice.svc/json/PriceDocument">Test - PriceDocument</a></li>
-                <li><a href="ServPrice.svc/json/PriceDocument?lname=Жлобицкий">Test - PriceDocument POSR Param</a></li>
 
             </ul>
         </li>
@@ -122,9 +120,57 @@
             <a href="ServKnowBase.svc">Сервис базы знаний</a>
             <ul>
                 <li><a href="ServKnowBase.svc/json/Connect">Test - Connect  JSON</a></li>
+                <li><a href="ServKnowBase.svc/json/posttest">Test - posttest  JSON</a></li>
+                
             </ul>
         </li>
     </ul>
+    <script>
+        function PostTest()
+        {
+            $.ajax(
+                {
+                    type: "POST",
+                    url: 'ServKnowBase.svc/json/posttest',
+                    data: {  da : {x:5,y:5}},
+                    contentType: "application/http; charset=utf-8",
+                    dataType: "json",
+                    cache: false,
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (msg) {
+                        alert(msg.responseText);
+                    }
+                })
+
+        }
+
+    </script>
+    <form name="form" method="post" action="ServKnowBase.svc/json/posttest">
+        <select name="Ogv">
+            <option value="1">МВД</option>
+            <option value="2">ЗАГС</option>
+        </select>
+        <input type="text" name="Lname" placeholder="Lname" /><br />
+        <input type="text" name="Fname" placeholder="Fname" /><br />
+        <input type="text" name="Mname" placeholder="Mname" /><br />
+        <input type="text" name="Adress" placeholder="Adress" /><br />
+        <select name="VidDul">
+            <option value="1">Паспорт</option>
+            <option value="2">СНИЛС</option>
+        </select>
+        <input type="text" name="NumberDul" placeholder="NumberDul" /><br />
+        <input type="text" name="Nationaly" placeholder="Nationaly" /><br />
+        <select name="Purpose">
+            <option value="1">Паспорт</option>
+            <option value="2">Загранпаспорт</option>
+        </select>
+        
+
+
+        <input type="submit" value="Старт" "/>
+    </form>
 
 
     <!--<form action="ServPrice.svc/json/PriceDocument" id="form1" method="get">

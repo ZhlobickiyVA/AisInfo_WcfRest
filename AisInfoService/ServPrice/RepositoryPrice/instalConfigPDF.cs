@@ -104,7 +104,7 @@ namespace AisInfoService
         CorrespAcc = "00000000000000000000",
         Purpose = purpose
       };
-      string Path = ConfigurationManager.AppSettings["CountSelect"];
+      string Path = ConfigurationManager.AppSettings["PathPriceData"];
       using (FileStream fs = new FileStream(HttpContext.Current.Server.MapPath(Path), FileMode.Create))
       {
         XmlSerializer formatter = new XmlSerializer(typeof(OrganGV[]));

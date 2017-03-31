@@ -3,6 +3,8 @@ using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -38,6 +40,8 @@ namespace AisInfoService
     public string Id { get; set; }
     [DataMember(Order = 1)]
     public string Name { get; set; }
+    [DataMember(Order = 2)]
+    public ItemPurpose[] Purpose { get; set; }
   }
   /// <summary>
   /// Дата контракт для передачи пользователя 
@@ -137,93 +141,150 @@ namespace AisInfoService
         dataRes[i] = new ItemOgv()
         {
           Id = Listdata[i].Id,
-          Name = Listdata[i].NameOgv
+          Name = Listdata[i].NameOgv,
+          Purpose = new ItemPurpose[Listdata[i].Purpose.Length]
         };
-      }
-      return dataRes;
-    }
-    /// <summary>
-    /// Выборки из параметров [Список вариантов платежей по органам власти]
-    /// </summary>
-    /// <param name="id">Идентификатор ОГВ</param>
-    /// <returns></returns>
-    public ItemPurpose[] GetListPurpose(int id)
-    {
-      ItemPurpose[] dataRes = new ItemPurpose[Listdata[id].Purpose.Length];
-      for (int i = 0; i < Listdata[id].Purpose.Length; i++)
-      {
-        dataRes[i] = new ItemPurpose()
+        for (int j = 0; j < Listdata[i].Purpose.Length; j++)
         {
-          Id = Listdata[id].Purpose[i].Id,
-          Name = Listdata[id].Purpose[i].Name
-        };
+          dataRes[i].Purpose[j] = new ItemPurpose()
+          {
+            Id = Listdata[i].Purpose[j].Id,
+            Name = Listdata[i].Purpose[j].Name
+          };
+        }
       }
+    
       return dataRes;
     }
 
-
-    /// <summary>
-    /// Получить список ДУЛ для платежного документа
-    /// </summary>
-    /// <returns></returns>
-    public ItemDul[] GetListDul()
-    {
-      string Path = ConfigurationManager.AppSettings["PathPriceListDul"];
-      using (FileStream fs = new FileStream(HttpContext.Current.Server.MapPath(Path), FileMode.Open))
+  /// <summary>
+  /// Получить список ДУЛ для платежного документа
+  /// </summary>
+  /// <returns></returns>
+  public ItemDul[] GetListDul()
+  {
+      string SQL = "SELECT TOP (1000) [id],[Name] FROM [AisInfo].[dbo].[ListDul]";
+      string Connect = ConfigurationManager.ConnectionStrings["ConnectAisInfo"].ConnectionString;
+      SqlConnection connection = new SqlConnection(Connect);
+      SqlCommand Command = new SqlCommand()
       {
-        XmlSerializer formatter = new XmlSerializer(typeof(ItemDul[]));
-        ItemDul[] data = (ItemDul[])formatter.Deserialize(fs);
-        return data;
+        Connection = connection,
+        CommandType = CommandType.Text,
+        CommandText = SQL
+      };
+      SqlDataAdapter data = new SqlDataAdapter()
+      {
+        SelectCommand = Command
+      };
+      DataSet ds = new DataSet();
+      data.Fill(ds);
+      connection.Close();
 
+      List<ItemDul> dul = new List<ItemDul>();
+
+      for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+      {
+        ItemDul itDul = new ItemDul()
+        {
+          Id = ds.Tables[0].Rows[i].ItemArray[0].ToString(),
+          Name = ds.Tables[0].Rows[i].ItemArray[1].ToString()
+        };
+        dul.Add(itDul);
       }
 
+      return dul.ToArray();
     }
 
 
-    /// <summary>
-    /// Получение обьекта содержащий информацию необходимую для формирования Печатной формы
-    /// </summary>
-    /// <returns>Заполненый массив параметров</returns>
-    /// 
-
-
-
-    private OrganGV[] GetDataPrice()
-    {
-
-
-      string Path = ConfigurationManager.AppSettings["PathPriceData"];
-      using (FileStream fs = new FileStream(HttpContext.Current.Server.MapPath(Path), FileMode.Open
-          , FileAccess.Read, FileShare.Read, bufferSize: 4096, useAsync: true))
+  /// <summary>
+  /// Получение обьекта содержащий информацию необходимую для формирования Печатной формы
+  /// </summary>
+  /// <returns>Заполненый массив параметров</returns>
+  /// 
+  private OrganGV[] GetDataPrice()
+  {
+      string SQL = "select id,Name,PayeeInn,PersonalAcc,Bic,BankName,Oktmo,Kpp,CorrespAcc from AisInfo..ListOgvPrice select id, Name, Kbk, Sum, idOgvPrice from AisInfo..PurposeOgvPrice; ";
+      string Connect = ConfigurationManager.ConnectionStrings["ConnectAisInfo"].ConnectionString;
+      SqlConnection connection = new SqlConnection(Connect);
+      SqlCommand Command = new SqlCommand()
       {
+        Connection = connection,
+        CommandType = CommandType.Text,
+        CommandText = SQL
+      };
+      SqlDataAdapter data = new SqlDataAdapter()
+      {
+        SelectCommand = Command
+      };
+      DataSet ds = new DataSet();
+      data.Fill(ds);
+      connection.Close();
 
-        XmlSerializer formatter = new XmlSerializer(typeof(OrganGV[]));
+      DataTable listOgv = new DataTable();
+      listOgv = ds.Tables[0];
+      DataTable listpurpose = new DataTable();
+      listpurpose = ds.Tables[1];
 
-        OrganGV[] data = (OrganGV[])formatter.Deserialize(fs);
+      OrganGV[] datares = new OrganGV[listOgv.Rows.Count];
 
-        return data;
+      for (int i = 0; i < listOgv.Rows.Count; i++)
+      {
+        datares[i] = new OrganGV()
+        {
+          Id = listOgv.Rows[i].ItemArray[0].ToString().Trim(),
+          NameOgv = listOgv.Rows[i].ItemArray[1].ToString().Trim(),
+          PayeeInn = listOgv.Rows[i].ItemArray[2].ToString().Trim(),
+          PersonalAcc = listOgv.Rows[i].ItemArray[3].ToString().Trim(),
+          Bic = listOgv.Rows[i].ItemArray[4].ToString().Trim(),
+          BankName = listOgv.Rows[i].ItemArray[5].ToString().Trim(),
+          Oktmo = listOgv.Rows[i].ItemArray[6].ToString().Trim(),
+          Kpp = listOgv.Rows[i].ItemArray[7].ToString().Trim(),
+          CorrespAcc = listOgv.Rows[i].ItemArray[8].ToString().Trim()
+        };
+        List<Purpose> purpose = new List<Purpose>();
+
+        for (int j = 0; j < listpurpose.Rows.Count; j++)
+        {
+          if (listpurpose.Rows[j].ItemArray[4].ToString().Trim() == datares[i].Id)
+          {
+            Purpose itPurpose = new Purpose()
+            {
+              Id = listpurpose.Rows[j].ItemArray[0].ToString().Trim(),
+              Name = listpurpose.Rows[j].ItemArray[1].ToString().Trim(),
+              Kbk = listpurpose.Rows[j].ItemArray[2].ToString().Trim(),
+              Sum = listpurpose.Rows[j].ItemArray[3].ToString().Trim()
+            };
+            purpose.Add(itPurpose);
+          }
+        }
+
+        datares[i].Purpose = purpose.ToArray();
+        
+        
+
+
       }
 
 
 
 
+      return datares;
 
+  }
 
-    }
+  /// <summary>
+  /// Формируем платежный документ
+  /// </summary>
+  /// <param name="info">Параметры формирования</param>
+  /// <returns>Платежный документ в бинарном формате</returns>
+  public byte[] GetDocumentPrice(InfoPdf info)
+  {
+    byte[] bPDF = null;
+    MemoryStream ms = new MemoryStream();
 
-    /// <summary>
-    /// Формируем платежный документ
-    /// </summary>
-    /// <param name="info">Параметры формирования</param>
-    /// <returns>Платежный документ в бинарном формате</returns>
-    public byte[] GetDocumentPrice(InfoPdf info)
-    {
-      byte[] bPDF = null;
-      MemoryStream ms = new MemoryStream();
-
-      Document document = new Document(PageSize.A4, 27, 30, 15, 10);
-      PdfWriter.GetInstance(document, ms);
-      document.Open();
+    Document document = new Document(PageSize.A4, 27, 30, 15, 10);
+    PdfWriter.GetInstance(document, ms);
+    document.Open();
 
 
       // Вставить таблицу
@@ -231,18 +292,21 @@ namespace AisInfoService
 
       document.Add(temp.GetTable(@"И з в е щ е н и е"));
       document.Add(temp.GetTable(@"К в и т а н ц и я", true));
-      document.Add(new Phrase());
+      document.Add(new Phrase(" "));
+      document.Add(new Phrase(" "));
+      document.Add(temp.GetTable(@"И з в е щ е н и е"));
+      document.Add(temp.GetTable(@"К в и т а н ц и я", true));
 
       document.Close();
 
-      bPDF = ms.ToArray();
+    bPDF = ms.ToArray();
 
-      return bPDF;
-    }
-
-
-
-
-
+    return bPDF;
   }
+
+
+
+
+
+}
 }

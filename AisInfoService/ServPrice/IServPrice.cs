@@ -29,13 +29,6 @@ namespace AisInfoService
 
         [OperationContract]
         [WebInvoke(Method = "GET"
-            , UriTemplate = "ListPurpose?idOgv={id}"
-            , BodyStyle = WebMessageBodyStyle.Bare)]
-        ItemPurpose[] GetListPurpose(string id);
-
-
-        [OperationContract]
-        [WebInvoke(Method = "GET"
             , UriTemplate = "ListDul"
             , BodyStyle = WebMessageBodyStyle.Bare)]
         ItemDul[] GetListDul();
