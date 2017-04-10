@@ -67,18 +67,26 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\ListAreaGorZhilServic.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\ListMdou.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="App_Data\TextFile1.txt" />
-    <Content Include="App_Data\StryctKhowBase.txt" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\dashboard.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\html5shiv.min.js" />
+    <Content Include="Content\ie10-viewport-bug-workaround.css" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Pages\Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="index.html" />
+    <Content Include="index2.html" />
     <Content Include="Scripts\ajax.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\holder.min.js" />
     <Content Include="Scripts\jquery-3.2.0.js" />
+    <Content Include="Scripts\npm.js" />
     <Content Include="ServKnowBase.svc" />
     <Content Include="ServInfo.svc" />
     <Content Include="ServPrice.svc" />
@@ -89,33 +97,42 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ServInfo\RepositoryInfo\ListMDOU.cs" />
-    <Compile Include="ServInfo\ServInfo.cs" />
-    <Compile Include="ServKnowBase\ServKnowBase.cs" />
-    <Compile Include="ServList\ServList.cs" />
-    <Compile Include="ServPrice\ServPrice.cs" />
-    <Compile Include="ServInfo\IServInfo.cs" />
-    <Compile Include="ServKnowBase\IServKnowBase.cs" />
-    <Compile Include="ServList\IServList.cs" />
-    <Compile Include="ServPrice\IServPrice.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Pages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ServInfo\RepositoryInfo\ListAreaGorZhilService.cs" />
-    <Compile Include="ServPrice\RepositoryPrice\instalConfigPDF.cs" />
-    <Compile Include="ServPrice\RepositoryPrice\TemplatePDF.cs" />
-    <Compile Include="ServList\RepositoryList\ModelEDV.cs" />
-    <Compile Include="ServList\RepositoryList\ModelKinder.cs" />
-    <Compile Include="ServInfo\ModelInfo.cs" />
-    <Compile Include="ServKnowBase\ModelKnowBase.cs" />
-    <Compile Include="ServList\ModelList.cs" />
-    <Compile Include="ServPrice\ModelPrice.cs" />
-    <Compile Include="ServList\RepositoryList\ModelOldlive.cs" />
-    <Compile Include="ServList\RepositoryList\ModelPayKinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainForm.Master.cs">
+      <DependentUpon>MainForm.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainForm.Master.designer.cs">
+      <DependentUpon>MainForm.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\LibraryService\LibraryService.csproj">
+      <Project>{af7f0895-f040-4089-8448-8e49a86de2a5}</Project>
+      <Name>LibraryService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MainForm.Master" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -124,6 +141,10 @@
       <DependentUpon>Web.config</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Control\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

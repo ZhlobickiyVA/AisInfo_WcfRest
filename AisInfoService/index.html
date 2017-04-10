@@ -5,6 +5,10 @@
     <title></title>
     <meta charset="utf-8" />
     <script src="Scripts/jquery-3.2.0.js"></script>
+
+
+
+
     <!--<script>
         function BindListDou() {
             $.ajax(
@@ -77,8 +81,18 @@
         BindListOGV();
         BindListPurpose(0);
     </script>-->
+
+    
+    <style>
+
+    </style>
 </head>
 <body>
+    
+    <div>
+        <img class="your-image"  />
+    </div>
+
     <ul>
         <li>
             <a href="ServList.svc">Сервис запроса информации от соц центра</a>
@@ -121,11 +135,15 @@
             <ul>
                 <li><a href="ServKnowBase.svc/json/Connect">Test - Connect  JSON</a></li>
                 <li><a href="ServKnowBase.svc/json/posttest">Test - posttest  JSON</a></li>
+                <li><a href="ServKnowBase.svc/json/image">Test - Image  JSON</a></li>
+                <li><a href="ServKnowBase.svc/json/ListData">Test - ListData  JSON</a></li>
+                <li><a href="ServKnowBase.svc/json/GetImage?id=2">Test - GetImage id=2  JSON</a></li>
+                
                 
             </ul>
         </li>
     </ul>
-    <script>
+    <!--<script>
         function PostTest()
         {
             $.ajax(
@@ -146,8 +164,13 @@
 
         }
 
-    </script>
-    <form name="form" method="post" action="ServKnowBase.svc/json/posttest">
+    </script>-->
+
+
+
+
+
+    <!--<form name="form" method="post" action="ServKnowBase.svc/json/posttest" >
         <select name="Ogv">
             <option value="1">МВД</option>
             <option value="2">ЗАГС</option>
@@ -167,11 +190,40 @@
             <option value="2">Загранпаспорт</option>
         </select>
         
-
+        <input type="file" name="file" />
 
         <input type="submit" value="Старт" "/>
-    </form>
+    </form>-->
+    
+    <!--<script>
+        function GetData() {
+            $.ajax(
+                {
+                    type: "GET",
+                    url: 'ServKnowBase.svc/json/ListData',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    cache: false,
+                    success: function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            $('#listdata').append('<div style="margin:2px 5px; border:1px solid green; padding:2px;">' + data[i].Name);
+                            for (var j = 0; j < data[i].Services.length; j++) {
+                                $('#listdata').append('<div style="margin:10px 10px; border:1px solid red; padding:2px;">' + data[i].Services[j].Name + '</div>');
+                            }
 
+
+                            $('#listdata').append('</div>');
+                        };
+                    },
+                    error: function (msg) {
+                        alert(msg.responseText);
+                    }
+                })
+        };
+        GetData();
+    </script>
+
+    <div id="listdata"></div>-->
 
     <!--<form action="ServPrice.svc/json/PriceDocument" id="form1" method="get">
         <select name="idOgv" id="ListOGV" style="width:100px;" onchange="BindListPurpose()"></select><br />
@@ -229,6 +281,6 @@
 
         </script>
     </div>-->
-
+    <img src="ServKnowBase.svc/json/GetImage?id=2" width="200" height="200" onclick="document.location.href = this.src;" />
 </body>
 </html>

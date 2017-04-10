@@ -98,3 +98,50 @@
 //        })
 //};
 
+
+
+
+
+window.onload = function () {
+    
+    $('#Lname').text = 'Привет';
+//    $('#TableRow tbody').empty();
+
+    document.forms["SearchForm"]["Lname"].value = 'Привет';
+
+    document.getElementById('BtnSearch').onclick = function () { alert('Меня нажали!!'); }
+    
+
+    document.getElementById('SideBar').onclick = function (e)
+    {
+        var par = this.getElementsByTagName('li');
+        for (var i = 0; i < par.length; i++) {
+            par[i].className = '';
+        }
+
+        var tn = e.target.id;
+
+        document.getElementById(tn).parentElement.className = 'active';
+    }
+
+
+    //$('#li1').addClass('active');
+
+}
+
+//$.ajax(
+//    {
+//        type: "GET",
+//        url: '/ServList.svc/json/ListKinder',
+//        data: "{}",
+//        contentType: "application/json; charset=utf-8",
+//        dataType: "json",
+//        cache: false,
+//        success: function (data) {
+//            alert(data)
+
+//        },
+//        error: function (msg) {
+//            alert(msg.responseText);
+//        }
+//    })

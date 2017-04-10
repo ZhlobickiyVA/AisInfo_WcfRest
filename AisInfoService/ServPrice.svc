@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="AisInfoService.ServPrice" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LibraryService.ServPrice" %>
