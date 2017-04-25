@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AisInfoService", "AisInfoService\AisInfoService.csproj", "{C3109640-CC38-423A-BEAE-EF61D06715F4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryService", "LibraryService\LibraryService.csproj", "{AF7F0895-F040-4089-8448-8E49A86DE2A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AisInformMVC", "AisInformMVC\AisInformMVC.csproj", "{1D73DEC6-BFCD-4F47-831D-9BF95FD8347B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C3109640-CC38-423A-BEAE-EF61D06715F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3109640-CC38-423A-BEAE-EF61D06715F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3109640-CC38-423A-BEAE-EF61D06715F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3109640-CC38-423A-BEAE-EF61D06715F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AF7F0895-F040-4089-8448-8E49A86DE2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF7F0895-F040-4089-8448-8E49A86DE2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF7F0895-F040-4089-8448-8E49A86DE2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF7F0895-F040-4089-8448-8E49A86DE2A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D73DEC6-BFCD-4F47-831D-9BF95FD8347B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D73DEC6-BFCD-4F47-831D-9BF95FD8347B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D73DEC6-BFCD-4F47-831D-9BF95FD8347B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D73DEC6-BFCD-4F47-831D-9BF95FD8347B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

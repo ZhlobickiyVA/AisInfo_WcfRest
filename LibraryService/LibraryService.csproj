@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LibraryService</RootNamespace>
     <AssemblyName>LibraryService</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,10 +31,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\AisInfoService\bin\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -43,6 +54,24 @@
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,27 +80,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\EFDBContext.cs" />
+    <Compile Include="Concrete\EFRepository.cs" />
+    <Compile Include="Entities\ModelAd.cs" />
+    <Compile Include="Entities\ModelEDV.cs" />
+    <Compile Include="Hlam\FormationDocumentPrice.cs" />
+    <Compile Include="Hlam\SelectToData.cs" />
+    <Compile Include="Entities\ModelEmployee.cs" />
+    <Compile Include="Entities\ModelHolidays.cs" />
+    <Compile Include="Entities\ModelKhowBase.cs" />
+    <Compile Include="Model\PriceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServInfo\IServInfo.cs" />
-    <Compile Include="ServInfo\ModelInfo.cs" />
-    <Compile Include="ServInfo\RepositoryInfo\ListAreaGorZhilService.cs" />
-    <Compile Include="ServInfo\RepositoryInfo\ListMDOU.cs" />
-    <Compile Include="ServInfo\ServInfo.cs" />
-    <Compile Include="ServKnowBase\IServKnowBase.cs" />
-    <Compile Include="ServKnowBase\ModelKnowBase.cs" />
-    <Compile Include="ServKnowBase\ServKnowBase.cs" />
-    <Compile Include="ServList\IServList.cs" />
-    <Compile Include="ServList\ModelList.cs" />
-    <Compile Include="ServList\RepositoryList\ModelEDV.cs" />
-    <Compile Include="ServList\RepositoryList\ModelKinder.cs" />
-    <Compile Include="ServList\RepositoryList\ModelOldlive.cs" />
-    <Compile Include="ServList\RepositoryList\ModelPayKinder.cs" />
-    <Compile Include="ServList\ServList.cs" />
-    <Compile Include="ServPrice\IServPrice.cs" />
-    <Compile Include="ServPrice\ModelPrice.cs" />
-    <Compile Include="ServPrice\RepositoryPrice\instalConfigPDF.cs" />
-    <Compile Include="ServPrice\RepositoryPrice\TemplatePDF.cs" />
-    <Compile Include="ServPrice\ServPrice.cs" />
+    <Compile Include="Hlam\ListMDOU.cs" />
+    <Compile Include="Model\ModelKnowBase.cs" />
+    <Compile Include="Entities\ModelKinder.cs" />
+    <Compile Include="Entities\ModelOldlive.cs" />
+    <Compile Include="Entities\ModelPayKinder.cs" />
+    <Compile Include="Entities\ModelPrice.cs" />
+    <Compile Include="ClassService\ServPrice.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\favicon.png">
@@ -85,5 +112,10 @@
     </Content>
     <Content Include="App_Data\TextFile1.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

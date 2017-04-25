@@ -1,0 +1,159 @@
+﻿@using LibraryService.Price
+@model PriceViewModel
+@{
+  ViewBag.Title = "Платежная квитанция";
+}
+
+<div class="panel panel-headline">
+    <div class="panel-heading">
+        <h2 class="panel-title">@ViewBag.Title</h2>
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+
+                @using (Html.BeginForm("Index", "PriceDoc", FormMethod.Post, new { @class = "formsearch mb20" }))
+                {
+                @Html.ValidationSummary();
+                <div class="col-md-12 form-group mb20">
+                    <label for="IndexOgv">Орган назначения платежа</label>
+                    <select id="IndexOgv" name="IndexOGV" class="form-control"></select>
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label for="IndexOgv">Фамилия</label>
+                    @Html.TextBox("LastName", "", new { @class = "form-control", placeholder = "Фамилия" })
+
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label for="IndexOgv">Имя</label>
+                    @Html.TextBox("FirstName", "", new { @class = "form-control", placeholder = "Имя" })
+
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label for="IndexOgv">Отчество</label>
+                    @Html.TextBox("MiddleName", "", new { @class = "form-control", placeholder = "Отчетство" })
+
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label for="DateBr">Адрес</label>
+                    @Html.TextBox("PayerAdress", "", new { @class = "form-control", placeholder = "г.Магадан ул.Горького 14 кв.433" })
+
+                </div>
+
+                <div class="col-md-12 form-group ">
+                    <label for="IndexOgv">Гражданство</label>
+                    @Html.TextBox("Nationaly", "РОССИЯ", new { @class = "form-control" })
+
+                </div>
+
+                <div class="col-md-12 form-group ">
+                    <label for="PayerIdType">Вид документа</label>
+                    <select id="PayerIdType" name="PayerIdType" class="form-control"></select>
+                </div>
+                <div class="col-md-12 form-group">
+                    <label for="IndexOgv">Номер документа</label>
+                    @Html.TextBox("PayerIdNum", "", new { @class = "form-control", placeholder = "Номер документа", autocomplete = "off" })
+
+                </div>
+
+
+
+                <div class="col-md-12 form-group">
+                    <label for="IndexPurpose">Назначение платежа</label>
+                    <select multiple id="IndexPurpose" name="IndexPurpose" class="form-control" style="height:150px;"></select>
+                </div>
+
+                <div class="col-md-12 form-group">
+
+                    <label class="fancy-checkbox custom-color-blue">
+                        <input type="checkbox" name="IsDoubleDoc" id="IsDoubleDoc" checked="checked">
+                        <span>Двойная квитанция</span>
+                    </label>
+                </div>
+
+                <div class="col-md-12 form-group">
+                    <label class="fancy-checkbox custom-color-blue">
+                        <input type="checkbox" name="isData" id="isData">
+                        <span>Пользователь дал согласие на обработку персональных данных</span>
+                    </label>
+                </div>
+
+
+                <div class="col-md-12 form-action mb20">
+                    <button type="submit" class="btn btn-primary">Найти</button>
+                    @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+                </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        $.ajax(
+            {
+                type: "GET",
+                url: '@Url.Action("GetData","PriceDoc")',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            success: function (data) {
+                var res = data;
+                for (var i = 0; i < res.length; i++) {
+                    $('#IndexOgv').append(new Option(res[i].NameOgv, res[i].Id));
+                }
+                var pur = data[0].Purposes;
+                for (var j = 0; j < pur.length; j++) {
+                    $('#IndexPurpose').append(new Option(pur[j].Name, pur[j].Id));
+                }
+                $("#IndexPurpose :nth-child(1)").attr("selected", "selected");
+
+                $('#IndexOgv').on('change', function () {
+                    var val = this.value;
+                    for (var i = 0; i < res.length; i++) {
+
+                        if (res[i].Id == val)
+                        {
+                            var pur = data[i].Purposes;
+                            $('#IndexPurpose').empty();
+                        for (var j = 0; j < pur.length; j++)
+                        {
+                           $('#IndexPurpose').append(new Option(pur[j].Name, pur[j].Id));
+                            }
+                        $("#IndexPurpose :nth-child(1)").attr("selected", "selected");
+                        }
+                    }
+                })
+            },
+            error: function (msg) {
+                alert(msg.responseText);
+            }
+        })
+        $.ajax(
+        {
+            type: "GET",
+            url: '@Url.Action("GetDataDocument", "PriceDoc")',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+            success: function (data) {
+                var res = data;
+                for (var i = 0; i < res.length; i++) {
+                    $('#PayerIdType').append(new Option(res[i].Name, res[i].Key));
+                }
+            },
+            error: function (msg) {
+                alert(msg.responseText);
+            }
+        })
+    </script>
+}
+
+

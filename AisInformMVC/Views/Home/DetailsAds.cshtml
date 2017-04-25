@@ -1,0 +1,31 @@
+﻿@model LibraryService.Ad
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-info AdsInfo">
+                <div class="panel-heading">
+                    @Model.Header
+                    <div class="right">
+                        <a href='@Url.Action("Index","Home")'><span>&times;</span></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <img class="image-grayscale" src="~/Image/user-medium.png"
+                         style="background-color:gray; float:left; margin:5px 20px 20px 0px;" 
+                         width="200" height="200" alt="Нет изображения"/>
+                    <p class="text-justify">@Model.Text</p>
+                </div>
+                <div class="panel-footer">
+                    <p class="text-right text-danger">Обьявление действует до: @Model.TheValidity.ToShortDateString()</p>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+    </div>
+
+
+</div>

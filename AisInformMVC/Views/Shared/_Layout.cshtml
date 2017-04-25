@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>АИС "ИНФОРМ" - @ViewBag.Title </title>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- ICONS -->
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Image/favicon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Image/favicon.png">
+    
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Header", required: false)
+</head>
+<body>
+
+    <!-- WRAPPER -->
+    <div id="wrapper">
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="brand">
+                <a href="Default" style="">
+                    <img src="~/Image/logo.PNG" alt="AIS INFORM" class="img-responsive logo">
+                </a>
+            </div>
+            <div class="container-fluid">
+                <div class="navbar-btn">
+                    <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- END NAVBAR -->
+        <!-- LEFT SIDEBAR -->
+        <div id="sidebar-nav" class="sidebar">
+            <div class="sidebar-scroll">
+                <ul class="nav">
+                    <li><a href='@Url.Action("Index","Home")'><i class="lnr lnr-home"></i>Главная</a></li>
+                    <li><a href='@Url.Action("Index","KhowBase")'><i class="lnr lnr-rocket"></i><span>База знаний</span></a></li>
+                    <li><a href='@Url.Action("Index","PriceDoc")'><i class="lnr lnr-file-empty"></i><span>Квитанция</span></a></li>
+                    <li>
+                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i><span>Списки СоцЦентра.</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <div id="subPages" class="collapse ">
+                            <ul class="nav">           
+                                <li><a href='@Url.Action("ListDou","ListSoc")'>Инормация по ДОУ</a></li>
+                                <li><a href='@Url.Action("ListEdv","ListSoc")'>Информация по ЕДВ</a></li>
+                                <li><a href='@Url.Action("ListOldPeople","ListSoc")'>Информация по Старожилам</a></li>
+                                <li><a href='@Url.Action("ListPayKinder","ListSoc")'>Информация по Ежемесячному пособию по ребенка</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#subPagesDopInfo" data-toggle="collapse" class="collapsed"><i class="lnr lnr-magnifier"></i><span>Информация</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+
+                        <div id="subPagesDopInfo" class="collapse ">
+                            <ul class="nav">
+                                <li><a href="ListGor" class="">Участки ГорЖилСервис</a></li>
+                                <li><a href="ListDous" class="">Список ДОУ</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <a href="#subPagesAdmin" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i><span>Администрирование</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <div id="subPagesAdmin" class="collapse ">
+                            <ul class="nav">
+                                <li><a href='@Url.Action("ListAds","Admin")'>Список обьявлений</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- END LEFT SIDEBAR -->
+
+        <!-- MAIN -->
+        <div class="main">
+            <!-- MAIN CONTENT -->
+            <div class="main-content">
+                <div class="container-fluid">
+
+
+
+                    <!-- OVERVIEW -->
+                    @if (TempData["message"] != null)
+                    {
+                    <div class="alert alert-success">@TempData["message"]</div>
+                    }
+                    
+                    
+                    @RenderBody()
+
+                    <!-- END OVERVIEW -->
+
+
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+
+
+
+
+    </div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Имя приложения", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Домашняя страница", "Index", "Home")</li>
+                    <li>@Html.ActionLink("О программе", "About", "Home")</li>
+                    <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>*@
+
+
+
+
+
+
+    <div class="clearfix"></div>
+
+    <footer>
+        <div class="container-fluid">
+            <hr />
+            <p class="copyright">&copy; @DateTime.Now.Year All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/slimscroll")
+
+    @Scripts.Render("~/bundles/Theme")
+
+    
+    
+    
+    
+    
+
+    @Scripts.Render("~/bundles/Scripts")
+
+    <!-- END WRAPPER -->
+    <!-- Javascript -->
+    
+
+
+
+    @*<script>
+        window.onload = function () {
+            var location = window.location.href;
+            var cur_url = location.split('/').pop();
+
+            $('#sidebar-nav li').each(function () {
+                var link = $(this).find('a').attr('href');
+
+                //if (cur_url == '') cur_url = 'Default';
+                if (cur_url == link) $(this).find('a').addClass('active');
+            });
+
+        }
+        
+    </script>*@
+
+
+    @RenderSection("Scripts",false)
+</body>
+</html>
+
+
+@*http://dataservice.accuweather.com/currentconditions/v1/289119?apikey=M4jSx5GH0cxoYvyPz1yTfWblshJGmAXe&language=ru-ru*@
+
+
+@section Scripts
+{
+    
+    }

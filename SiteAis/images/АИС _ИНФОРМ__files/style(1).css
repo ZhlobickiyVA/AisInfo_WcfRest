@@ -1,0 +1,39 @@
+﻿body {
+}
+.navbar-default .brand 
+{
+
+padding:20px 10px;
+max-width:260px;
+max-height:80px;
+
+}
+
+.formsearch 
+{
+
+}
+.form-action {
+
+}
+
+.mb20 {
+margin-bottom:20px;
+}
+
+.itemogv div {
+    border: 1px solid #e6e1e1;
+    padding: 10px 20px;
+    margin-bottom:5px;
+    box-shadow:#ff0000 2px;
+}
+.itemogv button {
+
+}
+
+.headlist {
+
+background-color:red;
+padding:10px;
+
+}

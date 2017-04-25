@@ -1,0 +1,116 @@
+﻿body {
+}
+
+.navbar-default .brand {
+    padding: 20px 10px;
+    max-width: 260px;
+    max-height: 80px;
+}
+
+.formsearch {
+}
+
+.form-action {
+}
+
+
+
+
+
+.itemogv div {
+    border: 1px solid #e6e1e1;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    box-shadow: #ff0000 2px;
+}
+
+.itemogv a {
+}
+
+
+.list-group .list-group-item {
+    margin-bottom: 10px;
+}
+
+.panel .panel-heading {
+}
+
+.panel {
+}
+
+
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mb5 {
+    margin-bottom: 5px;
+}
+
+.panelogv {
+}
+
+    .panelogv .panel {
+        margin-bottom: 5px;
+    }
+
+.BrList .list-group-item {
+    padding: 10px 4px;
+    box-shadow: #faf3d2 2px 2px;
+    background-color: #fcf8e3;
+}
+
+    .BrList .list-group-item:hover {
+        background-color: rgba(0, 170, 255, 0.50);
+    }
+
+.itemNote {
+    margin-bottom: 5px;
+    min-height: 300px;
+}
+
+.linkaddnote {
+}
+
+.infodepart {
+}
+
+.listDep {
+}
+
+    .listDep .typeDep {
+        color:darkred;
+    }
+
+    .listDep .panel-title a {
+        text-decoration: none;
+    }
+
+        .listDep .panel-title a:link, .listDep .panel-title a:visited {
+            color: #3287B2;
+        }
+
+        .listDep .panel-title a:hover, .listDep .panel-title a:active {
+            color: black;
+        }
+
+
+.infodepart .image {
+    margin-top: 30px;
+    height: 300px;
+    width: 300px;
+}
+
+.infodepart .val div {
+    padding: 5px 2px;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.jumbotron h1{
+    text-align:center;
+    text-transform:uppercase;
+    
+    
+}
