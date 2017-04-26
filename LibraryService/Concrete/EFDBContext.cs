@@ -1,4 +1,5 @@
-﻿using LibraryService.Price;
+﻿using LibraryService.KhowBase;
+using LibraryService.Price;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -58,6 +59,9 @@ namespace LibraryService
     public DbSet<Document> Documents { get; set; }
 
   }
+
+
+
  
 
 

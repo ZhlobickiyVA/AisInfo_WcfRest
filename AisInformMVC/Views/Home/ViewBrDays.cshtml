@@ -5,6 +5,7 @@
 <div class="panel panel-headline ">
     <div class="panel-heading">
         <h2 class="text-center">Дни рождения</h2>
+        <h4 class="text-center">@ViewBag.Month</h4>
         <hr style="margin:5px;">
     </div>
     <div class="panel-body">
@@ -16,8 +17,16 @@
                 foreach (var p in @Model)
                 {
                 <div class="list-group-item">
+                    @if (p.DateOfBirth.Day == DateTime.Now.Day)
+                    {
+                      <span class="glyphicon glyphicon-gift " style="color:red; ">&nbsp;</span>
+                    }
+                    else
+                    { 
                     <span class="glyphicon glyphicon-gift">&nbsp;</span>
-                    @p.GetShortName()
+                    }
+                    @p.GetShortName() 
+                    @p.DateOfBirth.Day.ToString("D2").@p.DateOfBirth.Month.ToString("D2") 
                 </div>
                 }
 

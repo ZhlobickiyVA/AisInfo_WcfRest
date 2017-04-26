@@ -133,3 +133,39 @@ font-size:20px;
     text-decoration:solid;
     
 }
+
+/*Список праздников*/ 
+
+.HoliDayList {
+
+font-size:20px;
+}
+
+.HoliDayList ul {
+    
+}
+
+    .HoliDayList li {
+        display: block;
+        margin-bottom:20px;
+    }
+
+        .HoliDayList li:before {
+            /*Using a Bootstrap glyphicon as the bullet point*/
+            content: "\e109";
+            font-family: 'Glyphicons Halflings';
+            font-size: 18px;
+            float: left;
+            margin-top: 4px;
+            margin-left: -20px;
+            line-height: 1;
+            font-style: normal;
+            font-weight: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+
+    .HoliDayList p {
+        margin-left:20px;
+    }

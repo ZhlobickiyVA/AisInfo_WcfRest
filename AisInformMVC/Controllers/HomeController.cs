@@ -3,6 +3,7 @@ using LibraryService;
 using LibraryService.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -62,19 +63,20 @@ namespace AisInformMVC.Controllers
           TotalItems = AdRepository.Ads.Count()
         },
 
-        Employees = EmplRepository.Staff.ToList()
-        .Where(e=> e.DateOfBirth.Date.Month == Now.Date.Month 
-        && e.DateOfBirth.Date.Day == Now.Date.Day),
+        Employees = EmplRepository.Staff.ToList().OrderBy(s=>s.DateOfBirth)
+        .Where(e=> e.DateOfBirth.Date.Month == Now.Date.Month)
+        ,
 
 
-        Holiday = HoliRepository.Holidays.ToList()
+        Holiday = HoliRepository.Holidays.ToList().OrderBy(s=>s.Date)
         .Where(e => e.Date.Date.Month == Now.Date.Month
         && e.Date.Date.Day == Now.Date.Day)
 
 
       };
+      ViewBag.Month = DateTimeFormatInfo.CurrentInfo.MonthNames[DateTime.Now.Month-1];
 
-      
+
       return View(model);
 
     }

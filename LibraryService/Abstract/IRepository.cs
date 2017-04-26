@@ -1,4 +1,5 @@
-﻿using LibraryService.Price;
+﻿using LibraryService.KhowBase;
+using LibraryService.Price;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace LibraryService.Abstract
   public interface IEmployeesRepository
   {
     IEnumerable<Employee> Staff { get; }
+    void SaveEmpl(Employee empl);
+    Employee DeleteEmpl(int Id);
   }
   public interface IHoliDayRepository
   {
@@ -63,5 +66,17 @@ namespace LibraryService.Abstract
 
     
   }
+
+  // База знаний
+
+  public interface IKhowBase
+  {
+    IEnumerable<ViewAuthority> ViewAuthorits { get;  }
+    IEnumerable<Territory> Territorys { get;  }
+    IEnumerable<Authority> Authoritys { get;  }
+    IEnumerable<Category> Categorys { get;  }
+    IEnumerable<Service> Services { get;  }
+  }
+
 
 }

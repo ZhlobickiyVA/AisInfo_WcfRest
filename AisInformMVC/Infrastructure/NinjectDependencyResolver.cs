@@ -55,6 +55,9 @@ namespace AisInformMVC.Infrastructure
 
       kernel.Bind<IPriceDocument>().To<EfPriceDocRepository>();
 
+      // KhowBase
+
+      kernel.Bind<IKhowBase>().To<EfKnowBaseRepository>();
 
     }
   }

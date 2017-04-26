@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibraryService
+namespace LibraryService.KhowBase
 {
   // Вид органа власти Федеральный, Минуципальный, Региональный
   public class ViewAuthority

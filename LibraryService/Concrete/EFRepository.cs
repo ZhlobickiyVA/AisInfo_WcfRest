@@ -7,12 +7,41 @@ using System.Text;
 using System.Threading.Tasks;
 using LibraryService.Price;
 using System.Data.Entity;
+using LibraryService.KhowBase;
 
 namespace LibraryService.Concrete
 {
   class EFRepository
   {
   }
+
+  // База знаний
+
+  public class EfKnowBaseRepository : IKhowBase
+  {
+    KnowBaseContext context = new KnowBaseContext();
+
+    public IEnumerable<ViewAuthority> ViewAuthorits {
+      get { return context.ViewAuthoritys; }}
+
+    public IEnumerable<Territory> Territorys {
+      get { return context.Territorys; }}
+
+    public IEnumerable<Authority> Authoritys {
+      get { return context.Authoritys
+          .Include(c => c.Auth)
+          .Include(c => c.ViewAuth)
+          .Include(c => c.Terr);
+          }}
+
+    public IEnumerable<Category> Categorys {
+      get { return context.Category;}}
+
+    public IEnumerable<Service> Services {
+      get { return context.Services.Include(c => c.Categor);}
+    }
+  }
+
 
 
   // Платежный документ
@@ -40,12 +69,50 @@ namespace LibraryService.Concrete
 
   }
 
+  // список сотрудников и дней рождений
+  public class EfEmployeesRepository : IEmployeesRepository
+  {
+    EmployeeContext emplcontext = new EmployeeContext();
 
+    public IEnumerable<Employee> Staff
+    {
+      get { return emplcontext.Staff; }
+    }
 
+    public Employee DeleteEmpl(int Id)
+    {
+      Employee dbEntry = emplcontext.Staff.Find(Id);
+      if (dbEntry != null)
+      {
+        emplcontext.Staff.Remove(dbEntry);
+        emplcontext.SaveChanges();
 
+      }
+      return dbEntry;
 
+    }
 
-  //
+    public void SaveEmpl(Employee Empl)
+    {
+      if (Empl.Id == 0) emplcontext.Staff.Add(Empl);
+      else
+      {
+        Employee dbEntry = emplcontext.Staff.Find(Empl.Id);
+        if (dbEntry != null)
+        {
+          dbEntry.LastName = Empl.LastName;
+          dbEntry.FirstName = Empl.FirstName;
+          dbEntry.MiddleName = Empl.MiddleName;
+          dbEntry.DateOfBirth = Empl.DateOfBirth;
+          dbEntry.Post = Empl.Post;
+        }
+      }
+      emplcontext.SaveChanges();
+    }
+
+  }
+
+  // Список обьявлений
   public class EfAdRepository : IAdRepository
   {
     AdContext adcontext = new AdContext();
@@ -86,17 +153,7 @@ namespace LibraryService.Concrete
     }
   }
 
-
-  public class EfEmployeesRepository : IEmployeesRepository
-  {
-    EmployeeContext emplcontext = new EmployeeContext();
-
-    public IEnumerable<Employee> Staff
-    {
-      get { return emplcontext.Staff; }
-    }
-  }
-
+  
   public class EfHolidayrepository : IHoliDayRepository
   {
     HolidayContext holicontext = new HolidayContext();
@@ -107,9 +164,6 @@ namespace LibraryService.Concrete
 
     }
   }
-
-
-
 
   public class EfListEdvRepository : IListEdv
   {

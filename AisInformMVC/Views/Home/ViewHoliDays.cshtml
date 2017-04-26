@@ -3,31 +3,35 @@
 
 <div class="panel panel-headline ">
     <div class="panel-heading">
-        <h2 class="text-center">Праздники</h2>
+        <h2 class="text-center">Праздники России</h2>
+        <h4 class="text-center">@DateTime.Now.Date.ToShortDateString()</h4>
         <hr style="margin:5px;">
     </div>
     <div class="panel-body">
-        <div class="list-group BrList">
-            
-            @if (@Model.Count() !=0)
-             {
-              foreach (var p in @Model)
-              {
-                <div class="list-group-item">
-                    <span class="glyphicon glyphicon-list">&nbsp;</span>
-                    @p.Name
-                </div>
-              }
-            }
-            else
-            {
-            <div>
-                <h5 class="text-center">Сегодня нет праздников.</h5>
+        <div class="list-group HoliDayList">
+            <ul>
+                @if (@Model.Count() != 0)
+                {
+                    foreach (var p in @Model)
+                    {
+                    <li>
+                        <p class="text-capitalize">           
+                            @p.Name
+                        </p>
+                    </li>
+                    }
+                }
+                else
+                {
+                <li>
+                    <h5 class="text-center">Сегодня нет праздников.</h5>
+                </li>
+                }
+
+            </ul>
+
+
+
             </div>
-            }
-
-
-            
         </div>
     </div>
-</div>
