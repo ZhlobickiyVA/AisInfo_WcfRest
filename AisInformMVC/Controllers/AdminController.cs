@@ -1,5 +1,6 @@
 ﻿using LibraryService;
 using LibraryService.Abstract;
+using LibraryService.KhowBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,13 @@ namespace AisInformMVC.Controllers
     // GET: Admin
     IAdRepository adrepository;
     IEmployeesRepository emplrepository;
+    IKhowBase knowbaserepository;
 
-
-    public AdminController(IAdRepository adrepo,IEmployeesRepository emprepo)
+    public AdminController(IAdRepository adrepo,IEmployeesRepository emprepo,IKhowBase khow)
     {
       adrepository = adrepo;
       emplrepository = emprepo;
+      knowbaserepository = khow;
     }
 
     public ViewResult ListAds()
@@ -113,6 +115,38 @@ namespace AisInformMVC.Controllers
       return RedirectToAction("ListEmployees");
     }
 
+    // База знаний
+
+    public ActionResult ListAuthority()
+    {
+      var list = knowbaserepository.Authoritys.ToList();
+      return View(list);
+    }
+
+    public ViewResult EditAuthority(int Id)
+    {
+
+      Authority Aut = knowbaserepository.Authoritys.FirstOrDefault(a => a.Id == Id);
+      ViewBag.Head = "Редактирование/Создание Органа власти";
+      return View(Aut);
+    }
+
+    [HttpPost]
+    public ActionResult EditAuthority(Authority Aut)
+    {
+
+      if (ModelState.IsValid)
+      {
+        knowbaserepository.SaveAuthority(Aut);
+        TempData["message"] = string.Format("Изменения в сотруднике \"{0}\" были сохранены", Aut.Name);
+        ViewBag.Head = "Редактирование";
+        return RedirectToAction("ListAuthority");
+      }
+      else
+      {
+        return View(Aut);
+      }
+    }
 
   }
 }

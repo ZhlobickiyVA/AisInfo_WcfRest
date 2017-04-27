@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LibraryService.KhowBase.Authority>
+
+@{
+  ViewBag.Title = "Список органов власти";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>Список органов власти</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered table-hover table-responsive">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Auth.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.Terr.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.ViewAuth.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.SlName)</th>
+                <th>@Html.DisplayNameFor(model => model.Frgu)</th>
+                <th>@Html.DisplayNameFor(model => model.Ogrn)</th>
+                <th>@Html.DisplayNameFor(model => model.Inn)</th>
+                <th>@Html.DisplayNameFor(model => model.Adress)</th>
+                <th>@Html.DisplayNameFor(model => model.FIOruk)</th>
+                <th>@Html.DisplayNameFor(model => model.Phone)</th>
+                <th>@Html.DisplayNameFor(model => model.Note)</th>
+                <th>Управление</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Auth.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Terr.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.ViewAuth.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.SlName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Frgu)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ogrn)</td>
+                <td>@Html.DisplayFor(modelItem => item.Inn)</td>
+                <td>@Html.DisplayFor(modelItem => item.Adress)</td>
+                <td>@Html.DisplayFor(modelItem => item.FIOruk)</td>
+                <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                <td>@Html.DisplayFor(modelItem => item.Note)</td>
+                <td class="text-center actionbutton">
+                    @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                </td>
+            </tr>
+            }
+
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Добавить орган власти", "Create", null,
+            new { @class = "btn btn-primary" })
+    </div>
+</div>
+
+
+
+
+
+

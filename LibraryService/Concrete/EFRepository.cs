@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using LibraryService.Price;
 using System.Data.Entity;
 using LibraryService.KhowBase;
+using LibraryService;
 
 namespace LibraryService.Concrete
 {
@@ -38,11 +39,96 @@ namespace LibraryService.Concrete
       get { return context.Category;}}
 
     public IEnumerable<Service> Services {
-      get { return context.Services.Include(c => c.Categor);}
+      get { return context.Services.Include(c => c.Categor).Include(c=>c.Authory);}
+    }
+
+    public Authority DeleteAuthority(int Id)
+    {
+      Authority dbEntry = context.Authoritys.Find(Id);
+      if (dbEntry != null)
+      {
+        context.Authoritys.Remove(dbEntry);
+        context.SaveChanges();
+
+      }
+      return dbEntry;
+    }
+    public Service DeleteService(int Id)
+    {
+      Service dbEntry = context.Services.Find(Id);
+      if (dbEntry != null)
+      {
+        context.Services.Remove(dbEntry);
+        context.SaveChanges();
+
+      }
+      return dbEntry;
+    }
+
+    public void SaveAuthority(Authority aut)
+    {
+      if (aut.Id == 0) context.Authoritys.Add(aut);
+      else
+      {
+        Authority dbEntry = context.Authoritys.Find(aut.Id);
+        if (dbEntry != null)
+        {
+          dbEntry.Name = aut.Name;
+          dbEntry.SlName = aut.SlName;
+          dbEntry.Frgu = aut.Frgu;
+          dbEntry.Ogrn = aut.Ogrn;
+          dbEntry.Inn = aut.Inn;
+          dbEntry.Adress = aut.Adress;
+          dbEntry.FIOruk = aut.FIOruk;
+          dbEntry.Phone = aut.Phone;
+          dbEntry.Note = aut.Note;
+
+          if (dbEntry.Map == null) dbEntry.Map = aut.Map;
+          else
+          {
+            if (aut.Map !=null) dbEntry.Map = aut.Map;
+          }
+
+
+
+          dbEntry.ViewAuthorityId = aut.ViewAuthorityId;
+          dbEntry.TerritoryId = aut.TerritoryId;
+          dbEntry.Service = aut.Service;
+          dbEntry.MapMimeType = aut.MapMimeType;
+            
+        }
+      }
+      context.SaveChanges();
+    }
+
+    public void SaveService(Service serv)
+    {
+      if (serv.Id == 0) context.Services.Add(serv);
+      else
+      {
+        Service dbEntry = context.Services.Find(serv.Id);
+        if (dbEntry != null)
+        {
+          
+          dbEntry.Name = serv.Name;
+          dbEntry.SlName = serv.SlName;
+          dbEntry.Frgu = serv.Frgu;
+          dbEntry.FlPeople = serv.FlPeople;
+          dbEntry.UnPeople = serv.UnPeople;
+          dbEntry.IpPeople = serv.IpPeople;
+          dbEntry.PerentPeople = serv.PerentPeople;
+          dbEntry.Text = serv.Text;
+          dbEntry.InAis = serv.InAis;
+
+          dbEntry.CategoryId = serv.CategoryId;
+          dbEntry.AuthorityId = serv.AuthorityId;
+
+        }
+      }
+      context.SaveChanges();
     }
   }
-
-
+  
 
   // Платежный документ
 
@@ -69,48 +155,48 @@ namespace LibraryService.Concrete
 
   }
 
-  // список сотрудников и дней рождений
-  public class EfEmployeesRepository : IEmployeesRepository
+// список сотрудников и дней рождений
+public class EfEmployeesRepository : IEmployeesRepository
+{
+  EmployeeContext emplcontext = new EmployeeContext();
+
+  public IEnumerable<Employee> Staff
   {
-    EmployeeContext emplcontext = new EmployeeContext();
+    get { return emplcontext.Staff; }
+  }
 
-    public IEnumerable<Employee> Staff
+  public Employee DeleteEmpl(int Id)
+  {
+    Employee dbEntry = emplcontext.Staff.Find(Id);
+    if (dbEntry != null)
     {
-      get { return emplcontext.Staff; }
-    }
-
-    public Employee DeleteEmpl(int Id)
-    {
-      Employee dbEntry = emplcontext.Staff.Find(Id);
-      if (dbEntry != null)
-      {
-        emplcontext.Staff.Remove(dbEntry);
-        emplcontext.SaveChanges();
-
-      }
-      return dbEntry;
-
-    }
-
-    public void SaveEmpl(Employee Empl)
-    {
-      if (Empl.Id == 0) emplcontext.Staff.Add(Empl);
-      else
-      {
-        Employee dbEntry = emplcontext.Staff.Find(Empl.Id);
-        if (dbEntry != null)
-        {
-          dbEntry.LastName = Empl.LastName;
-          dbEntry.FirstName = Empl.FirstName;
-          dbEntry.MiddleName = Empl.MiddleName;
-          dbEntry.DateOfBirth = Empl.DateOfBirth;
-          dbEntry.Post = Empl.Post;
-        }
-      }
+      emplcontext.Staff.Remove(dbEntry);
       emplcontext.SaveChanges();
+
     }
+    return dbEntry;
 
   }
+
+  public void SaveEmpl(Employee Empl)
+  {
+    if (Empl.Id == 0) emplcontext.Staff.Add(Empl);
+    else
+    {
+      Employee dbEntry = emplcontext.Staff.Find(Empl.Id);
+      if (dbEntry != null)
+      {
+        dbEntry.LastName = Empl.LastName;
+        dbEntry.FirstName = Empl.FirstName;
+        dbEntry.MiddleName = Empl.MiddleName;
+        dbEntry.DateOfBirth = Empl.DateOfBirth;
+        dbEntry.Post = Empl.Post;
+      }
+    }
+    emplcontext.SaveChanges();
+  }
+
+}
 
   // Список обьявлений
   public class EfAdRepository : IAdRepository

@@ -13,10 +13,12 @@ namespace AisInformMVC
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+      
       routes.MapRoute(
           name: "Default",
           url: "{controller}/{action}",
-          defaults: new { controller = "Home", action = "Index"}
+          defaults: new { controller = "Home", action = "Index"},
+          namespaces: new[] { "AisInformMVC.Controllers" }
       );
 
       routes.MapRoute(

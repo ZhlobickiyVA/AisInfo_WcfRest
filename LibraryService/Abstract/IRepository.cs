@@ -76,6 +76,13 @@ namespace LibraryService.Abstract
     IEnumerable<Authority> Authoritys { get;  }
     IEnumerable<Category> Categorys { get;  }
     IEnumerable<Service> Services { get;  }
+
+    // CRUD Органов власти
+    void SaveAuthority(Authority aut);
+    Authority DeleteAuthority(int Id);
+    // CRUD Услуг
+    void SaveService(Service aut);
+    Service DeleteService(int Id);
   }
 
 

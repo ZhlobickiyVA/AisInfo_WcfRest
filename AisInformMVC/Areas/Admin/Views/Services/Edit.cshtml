@@ -1,0 +1,105 @@
+﻿@model LibraryService.KhowBase.Service
+  
+
+@{
+  ViewBag.Title = "Редактирование услуги";
+  HtmlHelper.ClientValidationEnabled = false;
+  
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>Редактирование услуги</h3>
+    </div>
+        @using (Html.BeginForm("Edit", "Services"))
+        {
+        <div class="panel-body">
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SlName, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.SlName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SlName, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Frgu, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Frgu, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Frgu, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+            </div>
+
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'Text' );
+            </script>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.AuthorityId, "AuthorityId", htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownList("AuthorityId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.AuthorityId, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label class="fancy-checkbox custom-color-blue">
+                    <input type="checkbox" name="FlPeople" id="FlPeople">
+                    <span>@Html.DisplayName("FlPeople")</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="fancy-checkbox custom-color-blue">
+                    <input type="checkbox" name="UnPeople" id="UnPeople">
+                    <span>@Html.DisplayName("UnPeople")</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="fancy-checkbox custom-color-blue">
+                    <input type="checkbox" name="IpPeople" id="IpPeople">
+                    <span>@Html.DisplayName("IpPeople")</span>
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="fancy-checkbox custom-color-blue">
+                    <input type="checkbox" name="PerentPeople" id="PerentPeople">
+                    <span>@Html.DisplayName("PerentPeople")</span>
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="fancy-checkbox custom-color-blue">
+                    <input type="checkbox" name="InAis" id="InAis">
+                    <span>@Html.DisplayName("InAis")</span>
+                </label>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <input type="submit" value="Сохранить" class="btn btn-primary" />
+            @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
+        </div>
+
+        }
+
+
+    </div>
+

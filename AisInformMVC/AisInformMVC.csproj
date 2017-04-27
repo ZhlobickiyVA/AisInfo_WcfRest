@@ -162,6 +162,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthoritiesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ServicesController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,6 +190,7 @@
     <Content Include="Content\googleforn.css" />
     <Content Include="Content\ie10-viewport-bug-workaround.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Image\apple-icon.png" />
     <Content Include="Image\bg-lightl-904.jpg" />
     <Content Include="Image\favicon.png" />
@@ -206,6 +211,14 @@
     <Content Include="Content\Font2.woff" />
     <Content Include="Content\Font3.woff" />
     <Content Include="Content\Font4.woff" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Authorities\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Authorities\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Services\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Services\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -664,7 +677,6 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Scripts.js" />
-    <Content Include="TextFile1.txt" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -687,9 +699,12 @@
     <Content Include="Views\Admin\ListEmployees.cshtml" />
     <Content Include="Views\Admin\EditEmployees.cshtml" />
     <Content Include="Views\Home\HeaderPanel.cshtml" />
+    <Content Include="Views\Admin\ListAuthority.cshtml" />
+    <Content Include="Views\Admin\EditAuthority.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

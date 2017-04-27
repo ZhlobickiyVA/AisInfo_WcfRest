@@ -24,7 +24,11 @@ namespace AisInformMVC
       bundles.Add(new ScriptBundle("~/bundles/Theme").Include(
                   "~/Scripts/klorofil-common.js"));
 
-      
+      //"~/bundles/ckedit"
+
+      bundles.Add(new ScriptBundle("~/bundles/ckedit").Include(
+                  "~/Control/ckeditor/ckeditor.js"));
+
 
       // Используйте версию Modernizr для разработчиков, чтобы учиться работать. Когда вы будете готовы перейти к работе,
       // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
