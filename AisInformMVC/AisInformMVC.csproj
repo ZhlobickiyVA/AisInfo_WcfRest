@@ -163,11 +163,12 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthoritiesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServicesController.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Views\EmployeesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhowBaseController.cs" />
     <Compile Include="Controllers\ListSocController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Models\AisViewInfo.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\ViewKnowBase.cs" />
     <Compile Include="Models\ViewListSoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -198,6 +200,7 @@
     <Content Include="Image\login-bg.jpg" />
     <Content Include="Image\logo-dark.png" />
     <Content Include="Image\logo.PNG" />
+    <Content Include="Image\no-photo.gif" />
     <Content Include="Image\profile-bg.png" />
     <Content Include="Image\user-medium.png" />
     <Content Include="Image\user.png" />
@@ -692,15 +695,15 @@
     <Content Include="Views\Home\ViewHoliDays.cshtml" />
     <Content Include="Views\Home\ViewBrDays.cshtml" />
     <Content Include="Views\Home\ViewAdsList.cshtml" />
-    <Content Include="Views\Admin\ListAds.cshtml" />
-    <Content Include="Views\Admin\EditAds.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\ListAds.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\EditAds.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <Content Include="Views\Home\DetailsAds.cshtml" />
-    <Content Include="Views\Admin\ListEmployees.cshtml" />
-    <Content Include="Views\Admin\EditEmployees.cshtml" />
+    <Content Include="Areas\Admin\Views\Employees\ListEmployees.cshtml" />
+    <Content Include="Areas\Admin\Views\Employees\EditEmployees.cshtml" />
     <Content Include="Views\Home\HeaderPanel.cshtml" />
-    <Content Include="Views\Admin\ListAuthority.cshtml" />
-    <Content Include="Views\Admin\EditAuthority.cshtml" />
+    <Content Include="Views\ListSoc\ListGrant.cshtml" />
+    <Content Include="Views\KhowBase\DetailsServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

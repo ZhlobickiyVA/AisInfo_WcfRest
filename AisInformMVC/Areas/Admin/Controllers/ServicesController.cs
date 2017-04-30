@@ -35,6 +35,8 @@ namespace AisInformMVC.Areas.Admin.Controllers
     // GET: Admin/Services/Create
     public ActionResult Create()
     {
+      ViewBag.AuthorityId = new SelectList(KnowBaseRepository.Authoritys, "Id", "Name");
+      ViewBag.CategoryId = new SelectList(KnowBaseRepository.Categorys, "Id", "Name");
       return View("Edit",new Service());
     }
 

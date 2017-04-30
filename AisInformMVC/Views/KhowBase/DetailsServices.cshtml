@@ -1,0 +1,74 @@
+﻿@model LibraryService.KhowBase.Service
+
+@{
+    ViewBag.Title = "DetailsServices";
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h1>@Html.DisplayFor(model => model.Name)</h1>
+        <h3>@Html.DisplayFor(model => model.SlName)</h3>
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <span class="text-info">Орган власти:&nbsp;</span>
+                        <span>@Html.DisplayFor(model => model.Authory.Name)</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-info">@Html.DisplayNameFor(model => model.Categor.Name):&nbsp;</span>
+                        <span>@Html.DisplayFor(model => model.Categor.Name)</span>
+                    </li>
+                    <li class="list-group-item">
+                        <span class="text-info">@Html.DisplayNameFor(model => model.Frgu):&nbsp;</span>
+                        <span>@Html.DisplayFor(model => model.Frgu)</span>
+                    </li>
+
+                </ul>
+            </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.DisplayNameFor(model => model.Text)
+                    </div>
+                    <div class="col-md-12">
+                        @Html.Raw(Model.Text)
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            
+            
+        
+
+            @*<dt>@Html.DisplayNameFor(model => model.FlPeople)</dt>
+            <dd>@Html.DisplayFor(model => model.FlPeople)</dd>
+            <dt>@Html.DisplayNameFor(model => model.UnPeople)</dt>
+            <dd>@Html.DisplayFor(model => model.UnPeople)</dd>
+            <dt>@Html.DisplayNameFor(model => model.IpPeople)</dt>
+            <dd>@Html.DisplayFor(model => model.IpPeople)</dd>
+            <dt>@Html.DisplayNameFor(model => model.PerentPeople)</dt>
+            <dd>@Html.DisplayFor(model => model.PerentPeople)</dd>
+            <dt>@Html.DisplayNameFor(model => model.Text)</dt>
+            <dd></dd>
+            <dt>@Html.DisplayNameFor(model => model.InAis)</dt>
+            <dd>@Html.DisplayFor(model => model.InAis)</dd>*@
+
+
+
+    </div >
+    <div class="panel-footer">
+        @Html.ActionLink("Назад к списку органов власти", "Index", null, new { @class = "btn btn-primary" })
+    </div>
+</div>
+

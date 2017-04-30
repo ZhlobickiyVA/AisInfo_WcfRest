@@ -13,7 +13,8 @@ namespace AisInformMVC
     {
       routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-      
+     
+
       routes.MapRoute(
           name: "Default",
           url: "{controller}/{action}",
@@ -45,11 +46,7 @@ namespace AisInformMVC
           defaults: new { controller = "ListSoc", action = "ListPayKinder" }
       );
 
-      routes.MapRoute(
-          name: "KhowBase",
-          url: "{controller}/{action}",
-          defaults: new { controller = "KnowBase", action = "Index" }
-      );
+
 
     }
   }

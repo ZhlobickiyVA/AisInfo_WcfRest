@@ -1,4 +1,5 @@
-﻿using LibraryService.KhowBase;
+﻿using LibraryService.Entities;
+using LibraryService.KhowBase;
 using LibraryService.Price;
 using System;
 using System.Collections.Generic;
@@ -54,6 +55,11 @@ namespace LibraryService.Abstract
   public interface IListPayKinder
   {
     IEnumerable<ItemPayKinder> ListPayKinder { get; }
+  }
+
+  public interface IListGrant
+  {
+    IEnumerable<ModelGrant> ListGrant { get; }
   }
 
   // Платежная квитанция

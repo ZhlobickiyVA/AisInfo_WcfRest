@@ -50,6 +50,7 @@ namespace AisInformMVC.Infrastructure
       kernel.Bind<IListMdou>().To<EfListMdouRepository>();
       kernel.Bind<IListOldPeople>().To<EFListOldPeopleRepository>();
       kernel.Bind<IListPayKinder>().To<EFListPayKinderRepository>();
+      kernel.Bind<IListGrant>().To<EfListGrantRepository>();
 
       // PriceDoc
 

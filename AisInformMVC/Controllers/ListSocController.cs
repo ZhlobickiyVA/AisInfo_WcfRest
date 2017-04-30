@@ -15,14 +15,58 @@ namespace AisInformMVC.Controllers
     private IListMdou ListMdouContext;
     private IListOldPeople ListOldPeopleContext;
     private IListPayKinder ListPayKinderContext;
+    private IListGrant ListGrantContext;
 
-    public ListSocController(IListEdv listEdv, IListMdou listMdou,IListOldPeople listOldPeople,IListPayKinder listPayKinder)
+    public ListSocController(
+      IListEdv listEdv
+      , IListMdou listMdou
+      ,IListOldPeople listOldPeople
+      ,IListPayKinder listPayKinder
+      ,IListGrant listgrant)
     {
       ListEdvContext = listEdv;
       ListMdouContext = listMdou;
       ListOldPeopleContext = listOldPeople;
       ListPayKinderContext = listPayKinder;
+      ListGrantContext = listgrant;
     }
+
+
+    #region Список Субсидий
+    //ListGrant
+
+    [HttpPost]
+    public ActionResult ListGrant(SearchListSoc search)
+    {
+      var list = ListGrantContext.ListGrant.ToList().OrderBy(s=>s.LastName)
+        .Where(s => s.LastName.StartsWith(search.LastName ?? "")
+        && s.FirstName.StartsWith(search.FirstName ?? "")
+        && s.MiddleName.StartsWith(search.MiddleName ?? ""));
+      if (search.DateBr != null)
+      {
+        list = list.Where(s => s.DateOfBirth == Convert.ToDateTime(search.DateBr).Date);
+      }
+      return View(list.Take(30));
+    }
+
+    public ActionResult ListGrant()
+    {
+      var list = ListGrantContext.ListGrant.ToList();
+      return View(list.Take(30));
+    }
+
+
+
+
+
+
+    #endregion 
+
+
+
+
+
+
 
 
     #region Список ДОУ

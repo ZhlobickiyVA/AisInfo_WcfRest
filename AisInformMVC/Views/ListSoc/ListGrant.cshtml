@@ -1,0 +1,85 @@
+﻿@using LibraryService.Entities
+@model IEnumerable<ModelGrant>
+
+@{
+  ViewBag.Title = "Информация по Субсидиям";
+}
+
+<div class="panel panel-headline">
+    <div class="panel-heading">
+        <h2 class="panel-title">@ViewBag.Title</h2>
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            @*public string LastName { get; set; }
+                public string FirstName { get; set; }
+                public string MiddleName { get; set; }
+                public string DateBr { get; set; }*@
+            <div class="row">
+                @using (Html.BeginForm("ListGrant", "ListSoc", FormMethod.Post, new { @class = "formsearch mb20" }))
+                {
+                <div class="col-md-4 form-group">
+                    @Html.TextBox("LastName", "", new { @class = "form-control", placeholder = "Фамилия" })
+                </div>
+                <div class="col-md-4 form-group">
+                    @Html.TextBox("FirstName", "", new { @class = "form-control", placeholder = "Имя" })
+                </div>
+                <div class="col-md-4 form-group">
+                    @Html.TextBox("MiddleName", "", new { @class = "form-control", placeholder = "Отчетство" })
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="DateBr">Дата рождения</label>
+                    @Html.TextBox("DateBr", "", new { @class = "form-control", type = "date" })
+                </div>
+                    <div class="col-md-12 form-action mb20">
+                        <button type="submit" class="btn btn-primary">Найти</button>
+                        @Html.ActionLink("Отменить", "ListGrant", null, new { @class = "btn btn-default" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-headline">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+
+                <table class="table table-striped table-hover table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Фамилия</th>
+                            <th>Имя</th>
+                            <th>Отчество</th>
+                            <th>Дата рождения</th>
+                            <th>Период с</th>
+                            <th>Период по</th>
+                            <th>Причина приостановки</th>
+                            <th>Адрес</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in @Model)
+                        {
+                        <tr>
+                            <td>@p.LastName</td>
+                            <td>@p.FirstName</td>
+                            <td>@p.MiddleName</td>
+                            <td>@p.DateOfBirth.ToShortDateString()</td>
+                            <td>@p.PeriodFrom.ToShortDateString()</td>
+                            <td>@p.PeriodTo.ToShortDateString()</td>
+                            <td>@p.ReasonForTheSuspension</td>
+                            <td>@p.Adress</td>
+                        </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -70,7 +70,14 @@ font-size:20px;
 .linkaddnote {
 }
 
+/*Отображение панелей с информацией о органе власти*/
+
 .infodepart {
+    
+}
+
+.DivInfo {
+    min-height: 400px;
 }
 
 .listDep {
@@ -169,3 +176,10 @@ font-size:20px;
     .HoliDayList p {
         margin-left:20px;
     }
+
+
+.border-tab {
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}

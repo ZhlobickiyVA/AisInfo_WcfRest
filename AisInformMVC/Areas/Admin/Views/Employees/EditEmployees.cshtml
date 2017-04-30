@@ -10,7 +10,7 @@
         <h3>@ViewBag.Head</h3>
     </div>
     
-        @using (Html.BeginForm("EditEmployees", "Admin"))
+        @using (Html.BeginForm("EditEmployees", "Employees"))
         {
         <div class="panel-body">
             @Html.HiddenFor(m => m.Id)

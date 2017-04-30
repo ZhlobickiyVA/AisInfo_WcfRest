@@ -27,7 +27,7 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="brand">
-                <a href="Default" style="">
+                <a href='@Url.Action("Index","Home")' style="">
                     <img src="~/Image/logo.PNG" alt="AIS INFORM" class="img-responsive logo">
                 </a>
             </div>
@@ -45,42 +45,35 @@
                 <ul class="nav">
                     <li><a href='@Url.Action("Index","Authorities")'><i class="lnr lnr-home"></i>Список органов власти</a></li>
                     <li><a href='@Url.Action("Index","Services")'><i class="lnr lnr-home"></i>Список услуг</a></li>
+
+                    <li><a href='@Url.Action("ListEmployees","Employees")'><i class="lnr lnr-home"></i>Список сотрудников</a></li>
+                    <li><a href='@Url.Action("ListAds","Ads")'><i class="lnr lnr-home"></i>Список обьявлений</a></li>
+
                     @*<li><a href='@Url.Action("Index","KhowBase")'><i class="lnr lnr-rocket"></i><span>База знаний</span></a></li>
                     <li><a href='@Url.Action("Index","PriceDoc")'><i class="lnr lnr-file-empty"></i><span>Квитанция</span></a></li>*@
                     @*<li>
-                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i><span>Списки СоцЦентра.</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages" class="collapse ">
-                            <ul class="nav">
-                                <li><a href='@Url.Action("ListDou","ListSoc")'>Инормация по ДОУ</a></li>
-                                <li><a href='@Url.Action("ListEdv","ListSoc")'>Информация по ЕДВ</a></li>
-                                <li><a href='@Url.Action("ListOldPeople","ListSoc")'>Информация по Старожилам</a></li>
-                                <li><a href='@Url.Action("ListPayKinder","ListSoc")'>Информация по Ежемесячному пособию по ребенка</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#subPagesDopInfo" data-toggle="collapse" class="collapsed"><i class="lnr lnr-magnifier"></i><span>Информация</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i><span>Списки СоцЦентра.</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+        <div id="subPages" class="collapse ">
+            <ul class="nav">
+                <li><a href='@Url.Action("ListDou","ListSoc")'>Инормация по ДОУ</a></li>
+                <li><a href='@Url.Action("ListEdv","ListSoc")'>Информация по ЕДВ</a></li>
+                <li><a href='@Url.Action("ListOldPeople","ListSoc")'>Информация по Старожилам</a></li>
+                <li><a href='@Url.Action("ListPayKinder","ListSoc")'>Информация по Ежемесячному пособию по ребенка</a></li>
+            </ul>
+        </div>
+    </li>
+    <li>
+        <a href="#subPagesDopInfo" data-toggle="collapse" class="collapsed"><i class="lnr lnr-magnifier"></i><span>Информация</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 
-                        <div id="subPagesDopInfo" class="collapse ">
-                            <ul class="nav">
-                                <li><a href="ListGor" class="">Участки ГорЖилСервис</a></li>
-                                <li><a href="ListDous" class="">Список ДОУ</a></li>
-                            </ul>
-                        </div>
-                    </li>
+        <div id="subPagesDopInfo" class="collapse ">
+            <ul class="nav">
+                <li><a href="ListGor" class="">Участки ГорЖилСервис</a></li>
+                <li><a href="ListDous" class="">Список ДОУ</a></li>
+            </ul>
+        </div>
+    </li>*@
 
-                    <li>
-                        <a href="#subPagesAdmin" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i><span>Администрирование</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPagesAdmin" class="collapse ">
-                            <ul class="nav">
-                                <li><a href='@Url.Action("ListAds","Admin")'>Список обьявлений</a></li>
-
-                                <li><a href='@Url.Action("ListEmployees","Admin")'>Список сотрудников</a></li>
-                                <li><a href='@Url.Action("ListAuthority","Admin")'>Список органов власти</a></li>
-
-                            </ul>
-                        </div>
-                    </li>*@
+                   
                 </ul>
             </div>
         </div>

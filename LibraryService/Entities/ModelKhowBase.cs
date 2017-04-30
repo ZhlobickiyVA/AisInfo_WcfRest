@@ -16,7 +16,13 @@ namespace LibraryService.KhowBase
     public int Id { get; set; }
     [Display(Name = "Вид органа")]
     public string Name { get; set; }
-
+    // Получаем короткое имя: Федеральный орган власти - ФО
+    public string GetSmallName()
+    {
+      string[] str = this.Name.Split(' ');
+      string res = String.Format("{0}{1}", str[0][0], str[1][0]).ToUpper();
+      return res;
+    }
   }
   /// <summary>
   /// Вид территории действия ОГВ
@@ -27,6 +33,8 @@ namespace LibraryService.KhowBase
     public int Id { get; set; }
     [Display(Name = "Название территории")]
     public string Name { get; set; }
+
+    
   }
 
 

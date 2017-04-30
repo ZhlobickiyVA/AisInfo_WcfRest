@@ -85,6 +85,7 @@
     <Compile Include="Concrete\EFRepository.cs" />
     <Compile Include="Entities\ModelAd.cs" />
     <Compile Include="Entities\ModelEDV.cs" />
+    <Compile Include="Entities\ModelGrant.cs" />
     <Compile Include="Hlam\FormationDocumentPrice.cs" />
     <Compile Include="Hlam\SelectToData.cs" />
     <Compile Include="Entities\ModelEmployee.cs" />

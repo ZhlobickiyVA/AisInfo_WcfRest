@@ -61,35 +61,24 @@
             </div>
 
             <div class="form-group">
-                <label class="fancy-checkbox custom-color-blue">
-                    <input type="checkbox" name="FlPeople" id="FlPeople">
-                    <span>@Html.DisplayName("FlPeople")</span>
-                </label>
+                @Html.CheckBoxFor(model => model.FlPeople, false)
+                <span>@Html.DisplayNameFor(model=> model.FlPeople)</span>    
             </div>
             <div class="form-group">
-                <label class="fancy-checkbox custom-color-blue">
-                    <input type="checkbox" name="UnPeople" id="UnPeople">
-                    <span>@Html.DisplayName("UnPeople")</span>
-                </label>
+                @Html.CheckBoxFor(model => model.UnPeople, false)
+                <span>@Html.DisplayNameFor(model => model.UnPeople)</span>
             </div>
             <div class="form-group">
-                <label class="fancy-checkbox custom-color-blue">
-                    <input type="checkbox" name="IpPeople" id="IpPeople">
-                    <span>@Html.DisplayName("IpPeople")</span>
-                </label>
+                @Html.CheckBoxFor(model => model.IpPeople, false)
+                <span>@Html.DisplayNameFor(model => model.IpPeople)</span>
             </div>
             <div class="form-group">
-                <label class="fancy-checkbox custom-color-blue">
-                    <input type="checkbox" name="PerentPeople" id="PerentPeople">
-                    <span>@Html.DisplayName("PerentPeople")</span>
-                </label>
+                @Html.CheckBoxFor(model => model.PerentPeople, false)
+                <span>@Html.DisplayNameFor(model => model.PerentPeople)</span>
             </div>
-
             <div class="form-group">
-                <label class="fancy-checkbox custom-color-blue">
-                    <input type="checkbox" name="InAis" id="InAis">
-                    <span>@Html.DisplayName("InAis")</span>
-                </label>
+                @Html.CheckBoxFor(model => model.InAis, false)
+                <span>@Html.DisplayNameFor(model => model.InAis)</span>
             </div>
 
         </div>

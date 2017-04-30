@@ -9,6 +9,7 @@ using LibraryService.Price;
 using System.Data.Entity;
 using LibraryService.KhowBase;
 using LibraryService;
+using LibraryService.Entities;
 
 namespace LibraryService.Concrete
 {
@@ -103,13 +104,22 @@ namespace LibraryService.Concrete
 
     public void SaveService(Service serv)
     {
-      if (serv.Id == 0) context.Services.Add(serv);
+      if (serv.Id == 0)
+      {
+        if (serv.InAis)
+        {
+          serv.AccessDate = DateTime.Now;
+        }
+        else serv.AccessDate = DateTime.Parse("01.01.2000");
+
+        context.Services.Add(serv);
+      }
       else
       {
         Service dbEntry = context.Services.Find(serv.Id);
         if (dbEntry != null)
         {
-          
+
           dbEntry.Name = serv.Name;
           dbEntry.SlName = serv.SlName;
           dbEntry.Frgu = serv.Frgu;
@@ -119,6 +129,8 @@ namespace LibraryService.Concrete
           dbEntry.PerentPeople = serv.PerentPeople;
           dbEntry.Text = serv.Text;
           dbEntry.InAis = serv.InAis;
+
+
 
           dbEntry.CategoryId = serv.CategoryId;
           dbEntry.AuthorityId = serv.AuthorityId;
@@ -340,7 +352,6 @@ public class EfEmployeesRepository : IEmployeesRepository
     }
   }
 
-
   public class EFListOldPeopleRepository : IListOldPeople
   {
     public static IEnumerable<ItemOldLive> GetListOldLive()
@@ -367,7 +378,48 @@ public class EfEmployeesRepository : IEmployeesRepository
     }
   }
 
-  
+  // Список субсидий соц центр
+
+  public class EfListGrantRepository : IListGrant
+  {
+    public IEnumerable<ModelGrant> GetListGrant()
+    {
+      DataSet ds = new SelectToData("ConnectListSocDB").GetDatasetToBase(new ModelGrant());
+      List<ModelGrant> listGrant = new List<ModelGrant>();
+      foreach (var it in ds.Tables[0].AsEnumerable())
+      {
+       listGrant.Add(
+          new ModelGrant()
+          {
+            LastName = it.ItemArray[0].ToString(),
+            FirstName = it.ItemArray[1].ToString(),
+            MiddleName = it.ItemArray[2].ToString(),
+            DateOfBirth = (DateTime)it.ItemArray[3],
+            PeriodFrom = (DateTime)it.ItemArray[4],
+            PeriodTo = (DateTime)it.ItemArray[5],
+            ReasonForTheSuspension = it.ItemArray[6].ToString(),
+            Adress = 
+            it.ItemArray[7].ToString() //Населенный пункт
+            +" "+ it.ItemArray[8].ToString() //Улица
+            +" д."+ it.ItemArray[9].ToString() //Дом
+            +((it.ItemArray[10].ToString() !="") ? ("/"+ it.ItemArray[10].ToString()):"")//Корпус
+            +((it.ItemArray[11].ToString() != "") ? (" кв. "+it.ItemArray[11].ToString()):"") //Квартира
+            +((it.ItemArray[12].ToString() != "") ? String.Format(" ком. {0}",it.ItemArray[12].ToString()):"") //Комната
+          });
+      }
+      return listGrant;
+    }
+
+    public IEnumerable<ModelGrant> ListGrant
+    {
+      get
+      {
+        return GetListGrant() ;
+      }
+    }
+  }
+
+
 
 
 
