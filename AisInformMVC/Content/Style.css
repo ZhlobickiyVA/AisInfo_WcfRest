@@ -1,6 +1,19 @@
 ﻿body {
 }
 
+
+
+
+body {
+    min-height: 2000px;
+}
+
+.navbar-static-top {
+    margin-bottom: 19px;
+}
+
+
+
 .navbar-default .brand {
     padding: 20px 10px;
     max-width: 260px;
@@ -47,6 +60,13 @@
 .mb5 {
     margin-bottom: 5px;
 }
+.mt5 {
+    margin-top: 5px;
+}
+.mt20 {
+margin-top:20px;
+}
+
 
 .panelogv {
 }
@@ -183,3 +203,132 @@ font-size:20px;
     border-bottom: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
+
+/*Детальное отображение услуги*/
+.InfoService span {
+
+}
+.InfoService .panel {
+    font-size: 15px;
+    text-align: center;
+    width:100%;
+    padding:5px 0px;
+}
+.InfoService .trueBG {
+    background-color: #5cb85c;
+    color:#fff;
+}
+.InfoService .falseBG {
+    background-color: #d9534f;
+    color: #fff;
+}
+.logo {
+margin:0px;
+padding:0px;
+height:40px;
+}
+
+
+
+@media screen and (max-width: 1560px) {
+
+    .list-group-item {
+        padding: 5px 5px;
+    }
+
+    .BrList .list-group-item {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .list-group-item {
+        padding: 10px 15px;
+        
+    }
+
+    .BrList .list-group-item {
+        font-size: 20px;
+    }
+}
+/*Отображение погоды*/
+
+.Weather {
+    padding:0px;margin:0px;
+    
+}
+
+    .Weather td {
+        margin:0px;
+        width: 160px;
+        padding: 10px 0px 0px 5px;
+    }
+    .Weather .temp {
+    font-size:40px;
+    }
+
+
+/*Участки горжилсервис*/
+.ListGorZhilService, .ListGorZhilService .container-fluid
+, .leftBar {
+    margin: 0px;
+    padding: 0px;
+}
+
+    .leftBar ul {
+        margin: 5px 20px;
+    }
+    .leftBar ul li {
+        margin-bottom:10px;
+    }
+
+    .ListGorZhilService table {
+    width:100%;
+    text-align:center;
+    }
+        .ListGorZhilService table td:first-child
+         {
+            text-align: left;
+        }
+    .ListGorZhilService h4,h3,h5 {
+    text-align:center;
+    }
+
+
+
+/*Производственный календарь*/
+
+.TableCalendar {
+    max-width:350px;
+    text-align:center;
+    margin:0 auto;
+}
+    .TableCalendar tbody td{
+        max-width:40px;
+        text-align:center;
+    }
+    .TableCalendar caption p{
+        font-size:25px;
+
+    }
+    .HappyDay {
+    background-color:red;
+    color:white;
+    }
+    .Halfday {
+    background-color:#ff9c00;
+    color:white;
+    }
+
+    .foterInfo {
+        
+    }
+.labelInfo .Halfday,.labelInfo .HappyDay{
+padding:5px;
+}
+.foterInfo span {
+    color:red;
+    font-weight:bold;
+}
+

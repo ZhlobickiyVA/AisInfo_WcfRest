@@ -1,4 +1,5 @@
 ﻿using LibraryService;
+using LibraryService.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace AisInformMVC.Models
     public IEnumerable<Employee> Employees { get; set; }
     public IEnumerable<Holiday> Holiday { get; set; }
 
+    public RootObject Weather { get; set; }
+     
 
     public PagingInfo PagingInfo { get; set; }
 

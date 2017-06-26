@@ -47,7 +47,6 @@ namespace LibraryService
       DataSet ds = new DataSet();
       data.Fill(ds);
       connection.Close();
-
       return ds;
     }
 

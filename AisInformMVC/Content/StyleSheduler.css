@@ -1,0 +1,74 @@
+﻿.but {
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+}
+
+
+.butHeader {
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+}
+
+.buttonDay {
+    margin-bottom: 0px;
+}
+
+.tableData {
+}
+
+.table-condensed > thead > tr > th, .table-condensed > tbody > tr > th, .table-condensed > tfoot > tr > th, .table-condensed > thead > tr > td, .table-condensed > tbody > tr > td, .table-condensed > tfoot > tr > td {
+    padding: 2px;
+}
+
+.tableHeader {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+}
+
+.infoPanelData {
+    position: fixed;
+    width: 300px;
+    display: none;
+    z-index: 1000;
+}
+
+    .infoPanelData .panel {
+    }
+
+.panel .panel-heading {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.ItogHeader {
+   font-size:12px; 
+   padding:0px;
+   margin:0px;
+   text-align:center;
+
+}
+
+
+.combination {
+background-color :chartreuse;
+
+}
+
+
+
+.SelectControl {
+
+ overflow:auto;
+ font-size:14px;
+}
+.SelectControl option {
+    padding:5px 
+}
+
+    .SelectControl option:hover {
+        background-color:#ebebeb;
+    }

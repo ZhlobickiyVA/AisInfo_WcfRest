@@ -43,6 +43,9 @@
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
@@ -83,23 +86,28 @@
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\EFDBContext.cs" />
     <Compile Include="Concrete\EFRepository.cs" />
+    <Compile Include="Entities\DepartmentMFC.cs" />
     <Compile Include="Entities\ModelAd.cs" />
+    <Compile Include="Entities\ModelDictionary.cs" />
     <Compile Include="Entities\ModelEDV.cs" />
     <Compile Include="Entities\ModelGrant.cs" />
+    <Compile Include="Entities\ModelSchedule.cs" />
+    <Compile Include="Entities\BranchMFC.cs" />
     <Compile Include="Hlam\FormationDocumentPrice.cs" />
+    <Compile Include="Hlam\JsonClass.cs" />
+    <Compile Include="Hlam\ProzCalendar.cs" />
     <Compile Include="Hlam\SelectToData.cs" />
     <Compile Include="Entities\ModelEmployee.cs" />
     <Compile Include="Entities\ModelHolidays.cs" />
     <Compile Include="Entities\ModelKhowBase.cs" />
+    <Compile Include="Hlam\Util.cs" />
     <Compile Include="Model\PriceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Hlam\ListMDOU.cs" />
     <Compile Include="Model\ModelKnowBase.cs" />
     <Compile Include="Entities\ModelKinder.cs" />
     <Compile Include="Entities\ModelOldlive.cs" />
     <Compile Include="Entities\ModelPayKinder.cs" />
     <Compile Include="Entities\ModelPrice.cs" />
-    <Compile Include="ClassService\ServPrice.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\favicon.png">

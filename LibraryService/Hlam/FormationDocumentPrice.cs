@@ -17,6 +17,7 @@ namespace LibraryService
     private Purpose purpose;
     private List<Purpose> ListPurpose;
     PriceViewModel Mod;
+    bool FlagQrCode = false;
 
     // Толшина рамки по умолчанию.
     float DefBoard = 0.5F;
@@ -35,6 +36,7 @@ namespace LibraryService
       this.Mod = model;
       PriceDocContext context = new PriceDocContext();
       this.Aut = context.AuthoryPrice.Find(Convert.ToInt32(model.IndexOgv));
+      if (model.QrCodeForEachPart != null) FlagQrCode = true;
 
       ListPurpose = new List<Purpose>();
       for (int i = 0; i < model.IndexPurpose.Length; i++)
@@ -84,7 +86,7 @@ namespace LibraryService
 
     void GetTable(ref iTextSharp.text.Document Document, PriceViewModel Model=null)
     {
-      Document.Add(GetTable(@"И з в е щ е н и е",false,Model));
+      Document.Add(GetTable(@"И з в е щ е н и е", FlagQrCode, Model));
       Document.Add(GetTable(@"К в и т а н ц и я", true,Model));
     }
 

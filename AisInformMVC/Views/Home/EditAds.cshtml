@@ -1,0 +1,47 @@
+﻿@model LibraryService.Ad
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3>@ViewBag.Head @Model.Header</h3>
+    </div>
+
+    @using (Html.BeginForm("EditAds","Home"))
+    {
+    @Html.ValidationSummary();
+    <div class="panel-body">
+        @Html.HiddenFor(m => m.Id)
+
+
+        @foreach (var property in ViewData.ModelMetadata.Properties)
+        {
+            if (property.PropertyName != "Id")
+            {
+            <div class="form-group">
+                <label>@(property.DisplayName ?? property.PropertyName)</label>
+                @if (property.PropertyName == "Text")
+                {
+                @Html.TextArea(property.PropertyName, null,
+                                new { @class = "form-control", rows = 5 })
+                }
+                else
+                {
+                    if (property.PropertyName == "TheValidity")
+                    {
+                    @Html.TextBox(property.PropertyName, Model.TheValidity.ToString("yyyy-MM-dd"), new { @class = "form-control", type = "date", value = Model.TheValidity })
+                    }
+                    else
+                    {
+                    @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                    }
+                }
+                @Html.ValidationMessage(property.PropertyName)
+            </div>
+            }
+        }
+    </div>
+    <div class="panel-footer">
+        <input type="submit" value="Сохранить" class="btn btn-primary" />
+        @Html.ActionLink("Отменить", "Index", null, new {@class = "btn btn-default"})
+    </div>
+    }
+</div>

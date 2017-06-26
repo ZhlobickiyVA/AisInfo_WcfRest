@@ -1,0 +1,187 @@
+﻿@using LibraryService
+
+@{
+  ViewBag.Title = "Test";
+}
+
+
+@section Header
+{
+<link href="~/Content/StyleSheduler.css" rel="stylesheet" />
+}
+
+@{
+  int Month = 6;
+  int Year = 2017;
+
+
+
+  int CountDay = DateTime.DaysInMonth(Year, Month);
+
+  DateTime BeginData = DateTime.Parse(String.Format("{0}.{1}.{2}", 1, Month, Year));
+
+  int RatioHoliday = 1;
+  string MaxTimeDayWeekdays = string.Format("{0}",11 - RatioHoliday);
+  string MaxTimeDayOutPut = string.Format("{0}", 8 - RatioHoliday);
+
+}
+
+
+<div class="infoPanelData">
+    <form name="formdata" class="" id="formdata">
+        <div class="panel panel-info">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <input type="hidden" name="idButVal" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="kl">Количество часов</label>
+                    <input type="number" name="kl" id="kl" class="form-control" autofocus />
+                </div>
+                <label class="fancy-checkbox custom-color-blue">
+                    <input type="checkbox" name="IsСombination" id="IsСombination">
+                    <span>Совмешение</span>
+                </label>
+            </div>
+            <div class="panel-footer">
+                <button id="SubmitButton" class="btn btn-success">Сохранить</button>
+                <button id="CancelButton" class="btn btn-default">Отмена</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@*Тест*@
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3>График работы Окон на Июль 2017г.</h3>
+        </div>
+        <div class="panel-body" style="padding-left:0px;">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <table class="tableData table-hover table-bordered table-condensed" id="#TableData">
+                            <tbody>
+                                @*Дни месяца*@
+                                <tr style="">
+                                    <td style="width:40px;" colspan="2" rowspan="2">&nbsp;</td>
+                                    
+
+                                    @for (int i = 0; i < CountDay; i++)
+                                    {
+                                        DateTime CurrentDate = BeginData.AddDays(i);
+                                        int hday = Util.GetDayOfWeek(CurrentDate);
+                                        string typeday = "btn btn-default butHeader";
+                                        if (hday == 5 || hday == 6)
+                                        {
+                                            typeday = "btn btn-danger butHeader";
+                                        }
+                                        <td><button class="@typeday" name="ButDay" data-date="@CurrentDate">@CurrentDate.Day</button></td>
+                                    }
+
+                                    <td rowspan="2" class="ItogHeader"><span id="CountHours">Отработано часов</span></td>
+                                    <td rowspan="2" class="ItogHeader"><span>норма по произв кал.</span>	</td>
+                                    <td rowspan="2" class="ItogHeader"><span>отклонение тек.месяц.</span>	</td>
+                                    <td rowspan="2" class="ItogHeader"><span>отклонение нар. итогом</span></td>
+                                    <td rowspan="2" class="ItogHeader"><span>совмещение</span></td>
+
+
+                                </tr>
+                                @*Дни недели*@
+                                <tr>
+                                     @for (int i = 0; i < CountDay; i++)
+                                     {
+                                         DateTime CurrentDate = BeginData.AddDays(i);
+                                         int hday = Util.GetDayOfWeek(CurrentDate);
+                                         string typeday = "btn btn-default butHeader";
+                                         if (hday == 5 || hday == 6)
+                                         {
+                                             typeday = "btn btn-danger butHeader";
+                                         }
+                                        <td><button class="@typeday" style="height:15px; padding-bottom:20px;" name="butDayOfWeek">@Util.NameDayOfWeekSmall[hday]</button></td>
+                                     }
+                                </tr>
+
+                                @{int Row = 0; }
+                                @for (int Zona = 1; Zona <= 20; Zona++)
+                                {
+
+                                <tr style="height:30px;">
+                                    <td style="width:200px; background-color:aquamarine;" colspan="@string.Format("{0}",CountDay+7)">
+                                    <span style="color:black; margin-left:10px; text-transform:uppercase; font-weight:bold;">Окно @Zona</span>
+                                     <a class="btn btn-info btn-xs" style="height:20px; padding:0px 5px 0px 5px; margin-left:10px;">Добавить сотрудника</a>
+                                        <span style="margin-left:30px;">Комментарий к зоне</span>
+                                    </td>
+                                </tr>
+
+                                    for (int j = 0; j < 2; j++)
+                                    {
+                                <tr>
+                                    <td style="width:40px; text-align:center;">
+                                        <a><span class="glyphicon glyphicon-minus" style="color:red;" aria-hidden="true"></span></a>
+                                        
+                                    </td>
+                                    <td style="width:200px;">Жлобицкий В.А.</td>
+                                    @for (int i = 0; i < CountDay; i++)
+                                    {
+                                        DateTime CurrentDate = BeginData.AddDays(i);
+                                        int hday = Util.GetDayOfWeek(CurrentDate);
+                                        string typeday = "btn btn-default but buttonDay";
+                                        string maxtime = MaxTimeDayWeekdays;
+                                        if (hday == 5 || hday == 6)
+                                        {
+                                            typeday = "btn btn-danger but buttonDay";
+                                            maxtime = MaxTimeDayOutPut;
+                                            if (hday == 6) { maxtime = "0"; }
+                                        }
+                                        <td><button class="@typeday" 
+                                                    data-idbut="@Zona@i@j" 
+                                                    data-maxtime="@maxtime" 
+                                                    name="@String.Format("ButValue{0}", Row)"
+                                                    data-row="@Row"
+                                                    data-typework="0"
+                                                    data-toggle="toltip"
+                                                    data-placement="bottom"
+                                                    title="@string.Format("{0}", CurrentDate.ToShortDateString())"></button>
+                                    </td>
+
+                                    }
+                                    <td id="@String.Format("CountHours{0}", Row)" style="text-align:center;"><span >0</span></td>
+                                    <td><span>&nbsp;</span></td>
+                                    <td><span>&nbsp;</span></td>
+                                    <td><span>&nbsp;</span></td>
+                                    <td><span>&nbsp;</span></td>
+                                    @{Row++;}
+                                </tr>
+                                }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+@*Конец теста*@
+
+
+
+
+@section Scripts
+{
+    <script src="~/Scripts/ScriptSheduler.js"></script>
+}
+
+
+
+
+
+
+
+

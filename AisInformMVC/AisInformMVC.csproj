@@ -98,10 +98,15 @@
     <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2016.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
+    <Reference Include="Stimulsoft.Report, Version=2016.3.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -109,6 +114,12 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -162,17 +173,21 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AuthoritiesController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ServicesController.cs" />
-    <Compile Include="Areas\Admin\Views\EmployeesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BranchMfcController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EmployeesController.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Controllers\KhowBaseController.cs" />
     <Compile Include="Controllers\ListSocController.cs" />
     <Compile Include="Controllers\PriceDocController.cs" />
+    <Compile Include="Controllers\StiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,9 +207,15 @@
     <Content Include="Content\googleforn.css" />
     <Content Include="Content\ie10-viewport-bug-workaround.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\New\bootstrap.css" />
+    <Content Include="Content\New\bootstrap.min.css" />
+    <Content Include="Content\New\demo.css" />
+    <Content Include="Content\New\main.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\StyleSheduler.css" />
     <Content Include="Image\apple-icon.png" />
     <Content Include="Image\bg-lightl-904.jpg" />
+    <Content Include="Image\clear.gif" />
     <Content Include="Image\favicon.png" />
     <Content Include="Image\good_moning.jpg" />
     <Content Include="Image\login-bg.jpg" />
@@ -209,6 +230,26 @@
     <Content Include="Image\user3.png" />
     <Content Include="Image\user4.png" />
     <Content Include="Image\user5.png" />
+    <Content Include="Image\Weather\chanceflurries.gif" />
+    <Content Include="Image\Weather\chancerain.gif" />
+    <Content Include="Image\Weather\chancesleet.gif" />
+    <Content Include="Image\Weather\chancesnow.gif" />
+    <Content Include="Image\Weather\chancetstorms.gif" />
+    <Content Include="Image\Weather\clear.gif" />
+    <Content Include="Image\Weather\cloudy.gif" />
+    <Content Include="Image\Weather\flurries.gif" />
+    <Content Include="Image\Weather\fog.gif" />
+    <Content Include="Image\Weather\hazy.gif" />
+    <Content Include="Image\Weather\mostlycloudy.gif" />
+    <Content Include="Image\Weather\mostlysunny.gif" />
+    <Content Include="Image\Weather\partlycloudy.gif" />
+    <Content Include="Image\Weather\partlysunny.gif" />
+    <Content Include="Image\Weather\rain.gif" />
+    <Content Include="Image\Weather\sleet.gif" />
+    <Content Include="Image\Weather\snow.gif" />
+    <Content Include="Image\Weather\sunny.gif" />
+    <Content Include="Image\Weather\tstorms.gif" />
+    <Content Include="Scripts\holder.min.js" />
     <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Content\Font1.woff" />
     <Content Include="Content\Font2.woff" />
@@ -222,6 +263,12 @@
     <Content Include="Areas\Admin\Views\Services\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Services\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Content\New\demo.css.map" />
+    <Content Include="Content\New\main.css.map" />
+    <Content Include="Areas\Admin\Views\BranchMfc\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BranchMfc\Edit.cshtml" />
+    <Content Include="App_Data\Test.mrt" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -680,6 +727,8 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\Scripts.js" />
+    <Content Include="Scripts\ScriptSheduler.js" />
+    <Content Include="StaticFile\ListMDou.html" />
     <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -704,9 +753,14 @@
     <Content Include="Views\Home\HeaderPanel.cshtml" />
     <Content Include="Views\ListSoc\ListGrant.cshtml" />
     <Content Include="Views\KhowBase\DetailsServices.cshtml" />
+    <Content Include="Views\Home\EditAds.cshtml" />
+    <Content Include="Views\Home\Weather.cshtml" />
+    <Content Include="Views\Info\AreasGorZhilServic.cshtml" />
+    <Content Include="Views\Info\ListKindergarten.cshtml" />
+    <Content Include="Views\Info\ProductionCalendar.cshtml" />
+    <Content Include="Views\Sti\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
   </ItemGroup>
   <ItemGroup>

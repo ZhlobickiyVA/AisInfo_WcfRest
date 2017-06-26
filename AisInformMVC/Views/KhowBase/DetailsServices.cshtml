@@ -1,7 +1,7 @@
 ﻿@model LibraryService.KhowBase.Service
 
 @{
-    ViewBag.Title = "DetailsServices";
+  ViewBag.Title = "Информация по Услуге";
 }
 
 <div class="panel">
@@ -11,7 +11,7 @@
     </div>
     <div class="panel-body">
         <div class="container-fluid">
-            
+
             <div class="row">
                 <ul class="list-group">
                     <li class="list-group-item">
@@ -26,47 +26,71 @@
                         <span class="text-info">@Html.DisplayNameFor(model => model.Frgu):&nbsp;</span>
                         <span>@Html.DisplayFor(model => model.Frgu)</span>
                     </li>
-
                 </ul>
-            </div>
 
-
-
-                <div class="row">
-                    <div class="col-md-12">
-                        @Html.DisplayNameFor(model => model.Text)
+                <div class="row InfoService">
+                    <div class="col-md-2">
+                        @if (@Model.FlPeople)
+                        { <div class="panel trueBG">Доступна физическим лицам</div> }
+                        else
+                        { <div class="panel falseBG">Доступна физическим лицам</div> }
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-2">
+                        @if (Model.UnPeople)
+                        { <div class="panel trueBG">Доступна юр. лицам</div> }
+                        else
+                        { <div class="panel falseBG">Доступна юр. лицам</div> }
+                        
+                    </div>
+                    <div class="col-md-2">
+                        @if (Model.IpPeople)
+                        { <div class="panel trueBG">Доступна ИП</div> }
+                        else
+                        { <div class="panel falseBG">Доступна ИП</div> }
+                        
+                        
+                    </div>
+                    <div class="col-md-2">
+                        @if (Model.PerentPeople)
+                        { <div class="panel trueBG">Доступна представителям</div> }
+                        else
+                        { <div class="panel falseBG">Доступна представителям</div> }
+                    </div>
+                    <div class="col-md-2">
+                        @if (Model.InAis)
+                        { <div class="panel trueBG">Доступна в АИС</div> }
+                        else
+                        { <div class="panel falseBG">Доступна в АИС</div> }
+                        
+                        
+                        
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-md-12 mt20">
+                    <h3>Информация по услуге</h3>
+                </div>
+                <div class="col-md-12 mt5">
+                    <div>
                         @Html.Raw(Model.Text)
                     </div>
-
+                    
                 </div>
+            </div>
+            
+                
+
+
 
             </div>
 
 
 
-
-            
-            
-        
-
-            @*<dt>@Html.DisplayNameFor(model => model.FlPeople)</dt>
-            <dd>@Html.DisplayFor(model => model.FlPeople)</dd>
-            <dt>@Html.DisplayNameFor(model => model.UnPeople)</dt>
-            <dd>@Html.DisplayFor(model => model.UnPeople)</dd>
-            <dt>@Html.DisplayNameFor(model => model.IpPeople)</dt>
-            <dd>@Html.DisplayFor(model => model.IpPeople)</dd>
-            <dt>@Html.DisplayNameFor(model => model.PerentPeople)</dt>
-            <dd>@Html.DisplayFor(model => model.PerentPeople)</dd>
-            <dt>@Html.DisplayNameFor(model => model.Text)</dt>
-            <dd></dd>
-            <dt>@Html.DisplayNameFor(model => model.InAis)</dt>
-            <dd>@Html.DisplayFor(model => model.InAis)</dd>*@
-
-
-
-    </div >
+    </div>
     <div class="panel-footer">
         @Html.ActionLink("Назад к списку органов власти", "Index", null, new { @class = "btn btn-primary" })
     </div>

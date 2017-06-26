@@ -30,6 +30,12 @@ namespace LibraryService
     [DataType(DataType.Date)]
     [UIHint("Date")]
     public DateTime TheValidity { get; set; }
+
+
+    public Ad()
+    {
+      this.TheValidity = DateTime.Now;
+    }
   }
 
  

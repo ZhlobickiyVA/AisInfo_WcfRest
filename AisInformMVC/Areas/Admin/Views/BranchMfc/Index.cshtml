@@ -1,0 +1,68 @@
+﻿@using LibraryService
+
+@using LibraryService.Entities
+@model IEnumerable<BranchMFC>
+
+@{
+    ViewBag.Title = "Режимы работы МФЦ";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-10">
+                    <h3>@ViewBag.Title</h3>
+                </div>
+                <div class="col-lg-2">
+                    <div style="margin:0 auto; vertical-align:central;">
+                        @Html.ActionLink("Добавить МФЦ", "Create", null,
+            new { @class = "btn btn-primary" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered table-hover table-responsive">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.NameMFC)</th>
+                <th class="text-center">Режим работы</th>
+                <th class="text-center">Количество отделов</th>
+                <th class="text-center">Управление</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td><span style="vertical-align:central;">@item.NameMFC</span></td>
+
+                <td>
+                    @foreach (var Day in item.ListWorkTime)
+                    {
+                    <div>
+                        <p style="text-align:justify;">
+                            @Util.NameDayOfWeek[Day.NumberDayOfWeek]
+                        - C @Day.TimeBegin ПО @Day.TimeEnd ,
+                        Итого @Day.GetWorkTime().ToString() часов.
+                    </p>
+                </div>
+                    }
+                </td>
+
+                <td style="text-align:center;">@item.ListDepartament.Count()</td>
+
+                <td class="text-center actionbutton">
+                    @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" })
+
+                    @Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                </td>
+            </tr>
+            }
+        </table>
+    </div>
+
+    
+
+</div>

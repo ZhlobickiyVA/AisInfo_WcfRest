@@ -1,10 +1,15 @@
 ﻿using AisInformMVC.Models;
 using LibraryService;
 using LibraryService.Abstract;
+using LibraryService.Entities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -19,14 +24,16 @@ namespace AisInformMVC.Controllers
     private IAdRepository AdRepository;
     private IEmployeesRepository EmplRepository;
     private IHoliDayRepository HoliRepository;
+    private IDictionaryList Diclist;
 
     public int pageSize = 6;
 
-    public HomeController(IAdRepository adrepo,IEmployeesRepository EmplRepo,IHoliDayRepository HoliRepo)
+    public HomeController(IAdRepository adrepo,IEmployeesRepository EmplRepo,IHoliDayRepository HoliRepo,IDictionaryList Dlist)
     {
       AdRepository = adrepo;
       EmplRepository = EmplRepo;
       HoliRepository = HoliRepo;
+      Diclist = Dlist;
       
     }
 
@@ -41,6 +48,29 @@ namespace AisInformMVC.Controllers
 
     }
 
+    [HttpPost]
+    public ActionResult EditAds(Ad ad)
+    {
+
+      if (ModelState.IsValid)
+      {
+        AdRepository.SaveAd(ad);
+        TempData["message"] = string.Format("Обьявление сохранено", ad.Header);
+        ViewBag.Head = "Редактирование";
+        return RedirectToAction("Index");
+      }
+      else
+      {
+        return View(ad);
+      }
+    }
+    public ViewResult CreateAd()
+    {
+      ViewBag.Head = "Новое обьявление";
+      return View("EditAds", new Ad());
+    }
+
+
 
     public ActionResult Index(int page = 1)
     {
@@ -48,6 +78,20 @@ namespace AisInformMVC.Controllers
       ViewBag.InfoMessage = "Привет";
 
       DateTime Now = DateTime.Now.Date;
+      string st = Diclist.DictionaryList.Where(s => s.Type == TypeDictionary.Weather).Select(s=>s.Value).FirstOrDefault();
+
+      RootObject wea = null;
+
+      try
+      {
+        wea = JsonConvert.DeserializeObject<RootObject>(st);
+        wea.current_observation.wind_dir = Util.windDirect(wea.current_observation.wind_dir);
+        wea.current_observation.pressure_mb = Util.ConvertGpaToMmHgSt(wea.current_observation.pressure_mb);
+      }
+      catch {     
+      }
+
+
 
       AisViewInfo model = new AisViewInfo
       {
@@ -63,19 +107,25 @@ namespace AisInformMVC.Controllers
           TotalItems = AdRepository.Ads.Count()
         },
 
-        Employees = EmplRepository.Staff.ToList().OrderBy(s=>s.DateOfBirth)
-        .Where(e=> e.DateOfBirth.Date.Month == Now.Date.Month)
+        Employees = EmplRepository.Staff.ToList().OrderBy(s => s.DateOfBirth)
+        .Where(e => e.DateOfBirth.Date.Month == Now.Date.Month)
         ,
 
 
-        Holiday = HoliRepository.Holidays.ToList().OrderBy(s=>s.Date)
+        Holiday = HoliRepository.Holidays.ToList().OrderBy(s => s.Date)
         .Where(e => e.Date.Date.Month == Now.Date.Month
-        && e.Date.Date.Day == Now.Date.Day)
+        && e.Date.Date.Day == Now.Date.Day),
+
+        Weather = wea
+      
+
+        
 
 
       };
       ViewBag.Month = DateTimeFormatInfo.CurrentInfo.MonthNames[DateTime.Now.Month-1];
 
+      // --------------------
 
       return View(model);
 

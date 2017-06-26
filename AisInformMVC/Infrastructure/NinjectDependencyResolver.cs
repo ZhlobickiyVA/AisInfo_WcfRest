@@ -60,6 +60,13 @@ namespace AisInformMVC.Infrastructure
 
       kernel.Bind<IKhowBase>().To<EfKnowBaseRepository>();
 
+      // modeldictionary
+
+      kernel.Bind<IDictionaryList>().To<EfDictionaryRepository>();
+
+      // График работы МФЦ
+
+      kernel.Bind<IBranchMfcWork>().To<EfBranchMfcRepository>();
     }
   }
 }

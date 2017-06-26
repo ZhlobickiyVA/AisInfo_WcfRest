@@ -17,6 +17,7 @@ namespace LibraryService.Price
     public string PayerIdNum { get; set; }
     public string[] IndexPurpose { get; set; }
     public string IsDoubleDoc { get; set; }
+    public string QrCodeForEachPart { get; set; }
     
   }
 }

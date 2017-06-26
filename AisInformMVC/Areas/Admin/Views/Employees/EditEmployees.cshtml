@@ -31,7 +31,7 @@
                     {
                         if (property.PropertyName == "DateOfBirth")
                         {
-                        @Html.TextBox(property.PropertyName, null, new { @class = "form-control", type = "date" })
+                        @Html.TextBox(property.PropertyName, Model.DateOfBirth.ToString("yyyy-MM-dd"), new { @class = "form-control", type = "date" })
                         }
                         else
                         {

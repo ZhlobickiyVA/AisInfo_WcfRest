@@ -8,60 +8,54 @@
         <h2>Обьявления МФЦ</h2>
         <hr>
         <div class="right">
-            
-            @Html.ActionLink("Добавить обьявление", "CreateAd", "Admin", null,
+            @Html.ActionLink("Добавить обьявление", "CreateAd", null,
             new { @class = "btn btn-primary" })
-
         </div>
     </div>
     <div class="panel-body panel-primary">
         <div class="row">
-
-
-
-
-
-
-            @foreach (var p in @Model.Ads)
+            @if (@Model.Ads.Count() == 0)
             {
-            <div class="col-md-12">
-                <div class="panel panel-info AdsInfo">
-                    <div class="panel-heading">
-                        @p.Header
-                    </div>
-                    <div class="panel-body">
-                        <p>
-                            
-                            @if (p.Text.Length > 300)
+            <div class="AdsInfo">
+            <p style="text-align:center; font-size:20px;">
+                Нет обьявлений
+            </p>
+            </div>
+                }
+                else
+                {
+                foreach (var p in @Model.Ads)
+                {
+                <div class="col-md-12">
+                    <div class="panel panel-info AdsInfo">
+                        <div class="panel-heading">
+                            @p.Header
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                @if (p.Text.Length > 300)
                                 {
-                                    string str = p.Text.Substring(0, 300) + " ... ";
-                                    @str;
-                                } else { @p.Text; }
-                        </p>
-
-                        <div style="text-align:right;">
-                            @Html.ActionLink("Читать далее >>", "DetailsAds", "Home"
-                         , new { id = p.Id }
-                         , new { @class = "btn btn-primary btn-xs compItem"
-                          })
-
+                                string str = p.Text.Substring(0, 300) + " ... ";
+                                @str;
+                                }
+                                else
+                                {
+                                @p.Text;
+                                }
+                            </p>
+                            <div style="text-align:right;">
+                                @Html.ActionLink("Читать далее >>", "DetailsAds", "Home"
+                                , new { id = p.Id }
+                                , new { @class = "btn btn-primary btn-xs compItem" })
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
-
-
+                }
+                }
             </div>
-            }
-
-
-        </div>
         <div class="row " style="text-align:right;">
             @Html.PageLinks(Model.PagingInfo, x => Url.Action("Index", new { page = x }))
         </div>
     </div>
 </div>
-
-
-
-

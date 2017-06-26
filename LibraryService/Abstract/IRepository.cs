@@ -91,5 +91,33 @@ namespace LibraryService.Abstract
     Service DeleteService(int Id);
   }
 
+  // Дополнительный список всяко разно
+
+  public interface IDictionaryList
+  {
+    IEnumerable<ModelDictionary> DictionaryList { get; }
+    void SaveDictionary(ModelDictionary Dict);
+    ModelDictionary DeleteDictionary(int id);
+  }
+
+
+  // График работы МФЦ
+
+  public interface IBranchMfcWork
+  {
+    // Список МФЦ и график работы
+    IEnumerable<BranchMFC> ListBranchMFC { get; }
+    void SaveBranchMfc(BranchMFC BranchMFC);
+    BranchMFC DeleteBranchMfc(int id);
+    
+    // Список отделов МФЦ
+
+    IEnumerable<DepartmentMFC> ListDepartamentMFC { get; }
+    void SaveDepartament(DepartmentMFC DepartmentMFC);
+    DepartmentMFC DeleteDepartmentMfc(int id);
+
+  }
+
+
 
 }

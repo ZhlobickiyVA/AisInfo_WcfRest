@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row">
 
-                @using (Html.BeginForm("Index", "PriceDoc", FormMethod.Post, new { @class = "formsearch mb20" }))
+                @using (Html.BeginForm("Index", "PriceDoc", FormMethod.Post, new { @class = "formsearch mb20", target="_blank" }))
                 {
                 @Html.ValidationSummary();
                 <div class="col-md-12 form-group mb20">
@@ -68,12 +68,19 @@
                 </div>
 
                 <div class="col-md-12 form-group">
-
                     <label class="fancy-checkbox custom-color-blue">
                         <input type="checkbox" name="IsDoubleDoc" id="IsDoubleDoc" checked="checked">
                         <span>Двойная квитанция</span>
                     </label>
                 </div>
+
+                <div class="col-md-12 form-group">
+                    <label class="fancy-checkbox custom-color-blue">
+                        <input type="checkbox" name="QrCodeForEachPart" id="QrCodeForEachPart">
+                        <span>Расположить QrCode на каждой части квитанции</span>
+                    </label>
+                </div>
+
 
                 <div class="col-md-12 form-group">
                     <label class="fancy-checkbox custom-color-blue">
@@ -84,7 +91,7 @@
 
 
                 <div class="col-md-12 form-action mb20">
-                    <button type="submit" class="btn btn-primary">Найти</button>
+                    <button type="submit" class="btn btn-primary" >Сформировать</button>
                     @Html.ActionLink("Отменить", "Index", null, new { @class = "btn btn-default" })
                 </div>
 

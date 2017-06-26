@@ -1,4 +1,5 @@
-﻿using LibraryService.KhowBase;
+﻿using LibraryService.Entities;
+using LibraryService.KhowBase;
 using LibraryService.Price;
 using System;
 using System.Collections.Generic;
@@ -61,8 +62,23 @@ namespace LibraryService
   }
 
 
+  public class DictionaryContext : DbContext
+  {
+    public DictionaryContext() : base("ConnectAisInfo") { }
+    public DbSet<ModelDictionary> DictionaryList { get; set; }
+  }
 
- 
+  public class BranchMfcContext : DbContext
+  {
+    public BranchMfcContext() : base("ConnectAisInfo") { }
+
+    public DbSet<BranchMFC> ListBranchMFC { get; set; }
+    public DbSet<BranchWorkDayMFC> ListWorkDayMFC { get; set; }
+    public DbSet<DepartmentMFC> ListDepartments { get; set; }
+
+  }
+
+
 
 
 

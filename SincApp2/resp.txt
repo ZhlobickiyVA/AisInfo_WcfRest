@@ -1,0 +1,93 @@
+﻿{
+  "response": {
+  "version":"0.1",
+  "termsofService":"http://www.wunderground.com/weather/api/d/terms.html",
+  "features": {
+  "conditions": 1
+  }
+	}
+  ,	"current_observation": {
+		"image": {
+		"url":"http://icons.wxug.com/graphics/wu2/logo_130x80.png",
+		"title":"Weather Underground",
+		"link":"http://www.wunderground.com"
+		},
+		"display_location": {
+		"full":"Magadan, Russia",
+		"city":"Magadan",
+		"state":"",
+		"state_name":"Russia",
+		"country":"RS",
+		"country_iso3166":"RU",
+		"zip":"00000",
+		"magic":"12",
+		"wmo":"25913",
+		"latitude":"59.56999969",
+		"longitude":"150.80000305",
+		"elevation":"216.1"
+		},
+		"observation_location": {
+		"full":"Magadan, ",
+		"city":"Magadan",
+		"state":"",
+		"country":"RU",
+		"country_iso3166":"RU",
+		"latitude":"59.58000183",
+		"longitude":"150.77999878",
+		"elevation":"387 ft"
+		},
+		"estimated": {
+		},
+		"station_id":"UHMM",
+		"observation_time":"Last Updated on Май 2, 2:30 PM +11",
+		"observation_time_rfc822":"Tue, 02 May 2017 14:30:00 +1100",
+		"observation_epoch":"1493695800",
+		"local_time_rfc822":"Tue, 02 May 2017 14:10:01 +1000",
+		"local_epoch":"1493698201",
+		"local_tz_short":"+10",
+		"local_tz_long":"Asia/Vladivostok",
+		"local_tz_offset":"+1000",
+		"weather":"Облачно",
+		"temperature_string":"37 F (3 C)",
+		"temp_f":37,
+		"temp_c":3,
+		"relative_humidity":"60%",
+		"wind_string":"From the SSW at 7 MPH",
+		"wind_dir":"SSW",
+		"wind_degrees":210,
+		"wind_mph":7,
+		"wind_gust_mph":0,
+		"wind_kph":11,
+		"wind_gust_kph":0,
+		"pressure_mb":"1010",
+		"pressure_in":"29.83",
+		"pressure_trend":"0",
+		"dewpoint_string":"25 F (-4 C)",
+		"dewpoint_f":25,
+		"dewpoint_c":-4,
+		"heat_index_string":"NA",
+		"heat_index_f":"NA",
+		"heat_index_c":"NA",
+		"windchill_string":"32 F (0 C)",
+		"windchill_f":"32",
+		"windchill_c":"0",
+		"feelslike_string":"32 F (0 C)",
+		"feelslike_f":"32",
+		"feelslike_c":"0",
+		"visibility_mi":"6.2",
+		"visibility_km":"10.0",
+		"solarradiation":"--",
+		"UV":"3","precip_1hr_string":"-9999.00 in (-9999.00 mm)",
+		"precip_1hr_in":"-9999.00",
+		"precip_1hr_metric":"--",
+		"precip_today_string":"0.00 in (0.0 mm)",
+		"precip_today_in":"0.00",
+		"precip_today_metric":"0.0",
+		"icon":"mostlycloudy",
+		"icon_url":"http://icons.wxug.com/i/c/k/mostlycloudy.gif",
+		"forecast_url":"http://www.wunderground.com/global/stations/25913.html",
+		"history_url":"http://www.wunderground.com/history/airport/UHMM/2017/5/2/DailyHistory.html",
+		"ob_url":"http://www.wunderground.com/cgi-bin/findweather/getForecast?query=59.58000183,150.77999878",
+		"nowcast":""
+	}
+}

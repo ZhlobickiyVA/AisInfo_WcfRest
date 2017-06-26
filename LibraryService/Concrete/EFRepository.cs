@@ -23,24 +23,35 @@ namespace LibraryService.Concrete
   {
     KnowBaseContext context = new KnowBaseContext();
 
-    public IEnumerable<ViewAuthority> ViewAuthorits {
-      get { return context.ViewAuthoritys; }}
+    public IEnumerable<ViewAuthority> ViewAuthorits
+    {
+      get { return context.ViewAuthoritys; }
+    }
 
-    public IEnumerable<Territory> Territorys {
-      get { return context.Territorys; }}
+    public IEnumerable<Territory> Territorys
+    {
+      get { return context.Territorys; }
+    }
 
-    public IEnumerable<Authority> Authoritys {
-      get { return context.Authoritys
-          .Include(c => c.Auth)
-          .Include(c => c.ViewAuth)
-          .Include(c => c.Terr);
-          }}
+    public IEnumerable<Authority> Authoritys
+    {
+      get
+      {
+        return context.Authoritys
+      .Include(c => c.Auth)
+      .Include(c => c.ViewAuth)
+      .Include(c => c.Terr);
+      }
+    }
 
-    public IEnumerable<Category> Categorys {
-      get { return context.Category;}}
+    public IEnumerable<Category> Categorys
+    {
+      get { return context.Category; }
+    }
 
-    public IEnumerable<Service> Services {
-      get { return context.Services.Include(c => c.Categor).Include(c=>c.Authory);}
+    public IEnumerable<Service> Services
+    {
+      get { return context.Services.Include(c => c.Categor).Include(c => c.Authory); }
     }
 
     public Authority DeleteAuthority(int Id)
@@ -87,7 +98,7 @@ namespace LibraryService.Concrete
           if (dbEntry.Map == null) dbEntry.Map = aut.Map;
           else
           {
-            if (aut.Map !=null) dbEntry.Map = aut.Map;
+            if (aut.Map != null) dbEntry.Map = aut.Map;
           }
 
 
@@ -96,7 +107,7 @@ namespace LibraryService.Concrete
           dbEntry.TerritoryId = aut.TerritoryId;
           dbEntry.Service = aut.Service;
           dbEntry.MapMimeType = aut.MapMimeType;
-            
+
         }
       }
       context.SaveChanges();
@@ -140,7 +151,7 @@ namespace LibraryService.Concrete
       context.SaveChanges();
     }
   }
-  
+
 
   // Платежный документ
 
@@ -167,48 +178,48 @@ namespace LibraryService.Concrete
 
   }
 
-// список сотрудников и дней рождений
-public class EfEmployeesRepository : IEmployeesRepository
-{
-  EmployeeContext emplcontext = new EmployeeContext();
-
-  public IEnumerable<Employee> Staff
+  // список сотрудников и дней рождений
+  public class EfEmployeesRepository : IEmployeesRepository
   {
-    get { return emplcontext.Staff; }
-  }
+    EmployeeContext emplcontext = new EmployeeContext();
 
-  public Employee DeleteEmpl(int Id)
-  {
-    Employee dbEntry = emplcontext.Staff.Find(Id);
-    if (dbEntry != null)
+    public IEnumerable<Employee> Staff
     {
-      emplcontext.Staff.Remove(dbEntry);
-      emplcontext.SaveChanges();
-
+      get { return emplcontext.Staff; }
     }
-    return dbEntry;
 
-  }
-
-  public void SaveEmpl(Employee Empl)
-  {
-    if (Empl.Id == 0) emplcontext.Staff.Add(Empl);
-    else
+    public Employee DeleteEmpl(int Id)
     {
-      Employee dbEntry = emplcontext.Staff.Find(Empl.Id);
+      Employee dbEntry = emplcontext.Staff.Find(Id);
       if (dbEntry != null)
       {
-        dbEntry.LastName = Empl.LastName;
-        dbEntry.FirstName = Empl.FirstName;
-        dbEntry.MiddleName = Empl.MiddleName;
-        dbEntry.DateOfBirth = Empl.DateOfBirth;
-        dbEntry.Post = Empl.Post;
-      }
-    }
-    emplcontext.SaveChanges();
-  }
+        emplcontext.Staff.Remove(dbEntry);
+        emplcontext.SaveChanges();
 
-}
+      }
+      return dbEntry;
+
+    }
+
+    public void SaveEmpl(Employee Empl)
+    {
+      if (Empl.Id == 0) emplcontext.Staff.Add(Empl);
+      else
+      {
+        Employee dbEntry = emplcontext.Staff.Find(Empl.Id);
+        if (dbEntry != null)
+        {
+          dbEntry.LastName = Empl.LastName;
+          dbEntry.FirstName = Empl.FirstName;
+          dbEntry.MiddleName = Empl.MiddleName;
+          dbEntry.DateOfBirth = Empl.DateOfBirth;
+          dbEntry.Post = Empl.Post;
+        }
+      }
+      emplcontext.SaveChanges();
+    }
+
+  }
 
   // Список обьявлений
   public class EfAdRepository : IAdRepository
@@ -251,7 +262,7 @@ public class EfEmployeesRepository : IEmployeesRepository
     }
   }
 
-  
+  // Список правздников
   public class EfHolidayrepository : IHoliDayRepository
   {
     HolidayContext holicontext = new HolidayContext();
@@ -388,24 +399,24 @@ public class EfEmployeesRepository : IEmployeesRepository
       List<ModelGrant> listGrant = new List<ModelGrant>();
       foreach (var it in ds.Tables[0].AsEnumerable())
       {
-       listGrant.Add(
-          new ModelGrant()
-          {
-            LastName = it.ItemArray[0].ToString(),
-            FirstName = it.ItemArray[1].ToString(),
-            MiddleName = it.ItemArray[2].ToString(),
-            DateOfBirth = (DateTime)it.ItemArray[3],
-            PeriodFrom = (DateTime)it.ItemArray[4],
-            PeriodTo = (DateTime)it.ItemArray[5],
-            ReasonForTheSuspension = it.ItemArray[6].ToString(),
-            Adress = 
-            it.ItemArray[7].ToString() //Населенный пункт
-            +" "+ it.ItemArray[8].ToString() //Улица
-            +" д."+ it.ItemArray[9].ToString() //Дом
-            +((it.ItemArray[10].ToString() !="") ? ("/"+ it.ItemArray[10].ToString()):"")//Корпус
-            +((it.ItemArray[11].ToString() != "") ? (" кв. "+it.ItemArray[11].ToString()):"") //Квартира
-            +((it.ItemArray[12].ToString() != "") ? String.Format(" ком. {0}",it.ItemArray[12].ToString()):"") //Комната
-          });
+        listGrant.Add(
+           new ModelGrant()
+           {
+             LastName = it.ItemArray[0].ToString(),
+             FirstName = it.ItemArray[1].ToString(),
+             MiddleName = it.ItemArray[2].ToString(),
+             DateOfBirth = (DateTime)it.ItemArray[3],
+             PeriodFrom = (DateTime)it.ItemArray[4],
+             PeriodTo = (DateTime)it.ItemArray[5],
+             ReasonForTheSuspension = it.ItemArray[6].ToString(),
+             Adress =
+             it.ItemArray[7].ToString() //Населенный пункт
+             + " " + it.ItemArray[8].ToString() //Улица
+             + " д." + it.ItemArray[9].ToString() //Дом
+             + ((it.ItemArray[10].ToString() != "") ? ("/" + it.ItemArray[10].ToString()) : "")//Корпус
+             + ((it.ItemArray[11].ToString() != "") ? (" кв. " + it.ItemArray[11].ToString()) : "") //Квартира
+             + ((it.ItemArray[12].ToString() != "") ? String.Format(" ком. {0}", it.ItemArray[12].ToString()) : "") //Комната
+           });
       }
       return listGrant;
     }
@@ -414,9 +425,118 @@ public class EfEmployeesRepository : IEmployeesRepository
     {
       get
       {
-        return GetListGrant() ;
+        return GetListGrant();
       }
     }
+  }
+
+  public class EfDictionaryRepository : IDictionaryList
+  {
+    DictionaryContext context = new DictionaryContext();
+
+    public IEnumerable<ModelDictionary> DictionaryList
+    {
+      get { return context.DictionaryList; }
+    }
+
+    public ModelDictionary DeleteDictionary(int id)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void SaveDictionary(ModelDictionary Dict)
+    {
+      if (Dict.Id == 0) context.DictionaryList.Add(Dict);
+      else
+      {
+        ModelDictionary dbEntry = context.DictionaryList.Find(Dict.Id);
+        if (dbEntry != null)
+        {
+          dbEntry.Type = Dict.Type;
+          dbEntry.Value = Dict.Value;
+        }
+      }
+      context.SaveChanges();
+    }
+  }
+  public class EfBranchMfcRepository : IBranchMfcWork
+  {
+    BranchMfcContext context = new BranchMfcContext();
+
+    public IEnumerable<BranchMFC> ListBranchMFC
+    {
+      get { return context.ListBranchMFC.Include(s => s.ListWorkTime).Include(s=>s.ListDepartament); }
+    }
+    
+    public BranchMFC DeleteBranchMfc(int id)
+    {
+      BranchMFC dbEntry = context.ListBranchMFC.Include(s=>s.ListWorkTime).FirstOrDefault(s=>s.Id == id);
+      if (dbEntry != null)
+      {
+        context.ListBranchMFC.Remove(dbEntry);
+        context.SaveChanges();
+        context.ListWorkDayMFC.RemoveRange(context.ListWorkDayMFC.Where(s => s.BranchMFC == null));
+        context.SaveChanges();
+      }
+      return dbEntry;
+    }
+
+    public void SaveBranchMfc(BranchMFC BranchMfc)
+    {
+      if (BranchMfc.Id == 0) context.ListBranchMFC.Add(BranchMfc);
+      else
+      {
+        BranchMFC dbEntry = context.ListBranchMFC.Include(s=>s.ListWorkTime).FirstOrDefault(s=>s.Id == BranchMfc.Id);
+        if (dbEntry != null)
+        {
+          dbEntry.NameMFC = BranchMfc.NameMFC;
+          for (int i = 0; i < BranchMfc.ListWorkTime.Count; i++)
+          {
+            dbEntry.ListWorkTime[i].TimeBegin = BranchMfc.ListWorkTime[i].TimeBegin;
+            dbEntry.ListWorkTime[i].TimeEnd = BranchMfc.ListWorkTime[i].TimeEnd;
+          }
+          dbEntry.ListWorkTime = BranchMfc.ListWorkTime;
+        }
+      }
+      context.SaveChanges();
+      context.ListWorkDayMFC.RemoveRange(context.ListWorkDayMFC.Where(s=>s.BranchMFC == null));
+      context.SaveChanges();
+      
+    }
+
+
+    public IEnumerable<DepartmentMFC> ListDepartamentMFC
+    {
+      get { return context.ListDepartments ; }
+    }
+
+    public void SaveDepartament(DepartmentMFC DepartmentMFC)
+    {
+      if (DepartmentMFC.Id == 0) context.ListDepartments.Add(DepartmentMFC);
+      else
+      {
+        DepartmentMFC dbEntry = context.ListDepartments.FirstOrDefault(s=>s.Id == DepartmentMFC.Id);
+        if (dbEntry != null)
+        {
+          dbEntry.Name = DepartmentMFC.Name;
+          dbEntry.BranchMFC = DepartmentMFC.BranchMFC;
+        }
+      }
+      context.SaveChanges();
+    }
+    public DepartmentMFC DeleteDepartmentMfc(int id)
+    {
+      DepartmentMFC dbEntry = context.ListDepartments.FirstOrDefault(s=>s.Id == id);
+      if (dbEntry != null)
+      {
+        context.ListDepartments.Remove(dbEntry);
+        context.SaveChanges();
+      }
+      return dbEntry;
+    }
+
+
+  }
   }
 
 
@@ -425,4 +545,3 @@ public class EfEmployeesRepository : IEmployeesRepository
 
 
 
-}

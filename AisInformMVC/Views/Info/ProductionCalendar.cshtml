@@ -1,0 +1,111 @@
+﻿@using LibraryService
+@model List<int[,]>
+
+
+@{
+  ViewBag.Title = "Производственный календарь";
+}
+
+
+<div class="panel">
+    <div class="panel-heading">
+        
+
+        <div class="container-fluid">
+            <div class="row mb20">
+                <h2>Производственный календарь на @ViewBag.YearMonth год.</h2>
+            </div>
+            <div class="row mb20">
+               @foreach (var item in @ViewBag.ListYear)
+               {
+                 
+                 <a href='@Url.Action("ProductionCalendar",new { Year = item } )'>
+                 @if (Request.QueryString["Year"] == item || (Request.QueryString["Year"]==null & item == DateTime.Now.Year.ToString()))
+                 {
+                <input type="button" class="btn btn-success" value="@item" />
+                 }
+                 else
+                 {
+                   <input type="button" class="btn btn-default" value="@item" />
+                 }
+                 
+                 </a>
+               }
+            </div>
+            <div class="row labelInfo">
+                <div class="col-lg-3">
+                    <div class="HappyDay mb5">Выходные и праздничные дни</div>
+                    <div class="Halfday">Предпраздничные и сокращенные рабочие дни</div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="panel-body">
+        <div class="container-fluid">
+            <div class="row">
+                
+                @for (int mon = 0; mon < Model.Count; mon++)
+                {
+                    var item = Model[mon];
+                <div class="col-lg-3">
+                    <div class="table-responsive" style="min-height:350px;">
+                        <table class="table table-bordered table-hover TableCalendar" >
+                            <caption><p style="text-align:center;">@Util.Month[mon]</p></caption>
+                            <tbody>
+                                <tr style="">
+                                    <th style="text-align:center;"><b>пн</b></th>
+                                    <th style="text-align:center;"><b>вт</b></th>
+                                    <th style="text-align:center;"><b>ср</b></th>
+                                    <th style="text-align:center;"><b>чт</b></th>
+                                    <th style="text-align:center;"><b>пт</b></th>
+                                    <th style="text-align:center;"><b>сб</b></th>
+                                    <th style="text-align:center;"><b>вс</b></th>
+                                </tr>
+                                @for (int i = 0; i < item.Length/7; i++)
+                                {
+                                  <tr>
+                                      @for (int j = 0; j < 7; j++)
+                                      {
+                                          int Val = item[i, j];
+                                          if (Val == 0)
+                                          {<td>&nbsp;</td>}
+                                          else
+                                          {
+                                              if (Val > 100)
+                                              {<td class="HappyDay"><span>@String.Format("{0}", Val - 100).Trim()</span></td>   }
+                                              else
+                                              {
+                                                  if (Val < 0)
+                                                  {
+                                                    <td class="Halfday"><span>@String.Format("{0}", Val *-1).Trim()</span></td>
+                                                  }
+                                                  else
+                                                  {
+                                                    <td><span>@Val.ToString().Trim()</span></td>  
+                                                  }
+                                              }
+                                          }
+                                      }
+                                  </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                }
+            </div>
+        </div>
+
+    </div>
+    <div class="panel-footer">
+        <div></div>
+        <div><p class="foterInfo">Всего рабочих дней: <span>@ViewBag.SumWorkDay</span></p></div>
+        <div><p class="foterInfo">Всего праздничных и выходных дней: <span>@ViewBag.SumHepyDay</span></p></div>
+        <div><p class="foterInfo">Количество рабочих часов при 24-часовой рабочей неделе: <span>@ViewBag.SumWork24Hour</span></p></div>
+        <div><p class="foterInfo">Количество рабочих часов при 36-часовой рабочей неделе: <span>@ViewBag.SumWork36Hour</span></p></div>
+        <div><p class="foterInfo">Количество рабочих часов при 40-часовой рабочей неделе: <span>@ViewBag.SumWork40Hour</span></p></div>
+    </div>
+</div>
+

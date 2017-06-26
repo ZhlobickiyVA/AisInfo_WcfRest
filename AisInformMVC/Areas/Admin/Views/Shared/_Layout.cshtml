@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="pragma" content="no-cache" />
 
-    <meta http-equiv="X-UA-Compatible" content="IE=8,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="~/Image/favicon.png">
@@ -14,8 +14,7 @@
 
 
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/ckedit")
-    @Scripts.Render("~/bundles/modernizr")
+
 
     @RenderSection("Header", required: false)
 </head>
@@ -26,58 +25,58 @@
 
         <!-- NAVBAR -->
         <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="brand">
-                <a href='@Url.Action("Index","Home")' style="">
-                    <img src="~/Image/logo.PNG" alt="AIS INFORM" class="img-responsive logo">
-                </a>
-            </div>
+
+            @*<div class="">
+                    <a href='@Url.Action("Index")' style="">
+                        <img src="~/Image/logo.PNG" alt="AIS INFORM" class="img-responsive logo" width="100" height="20">
+                    </a>
+                </div>*@
+
+
+
             <div class="container-fluid">
-                <div class="navbar-btn">
-                    <button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+                <div class="brand">
+                    <a href='@Url.Action("Index","Home")' style="">
+                        <img src="~/Image/logo.PNG" alt="AIS INFORM" class="img-responsive logo">
+                    </a>
                 </div>
+
+                <div id="navbar-menu">
+                    <ul class="nav navbar-nav">
+                        <li><a href='@Url.Action("ListAds","Ads")'><i class="lnr lnr-home"></i><span>Список обьявлений</span></a></li>
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-dice"></i><span>База знаний</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href='@Url.Action("Index","Authorities")'><i class="lnr lnr-user"></i> <span>Список органов власти</span></a></li>
+                                <li><a href='@Url.Action("Index","Services")'><i class="lnr lnr-user"></i> <span>Список услуг</span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-dice"></i><span>Администрирование</span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href='@Url.Action("ListEmployees","Employees")'><i class="lnr lnr-user"></i> <span>Список сотрудников</span></a></li>
+                                <li><a href='@Url.Action("Index","BranchMFC")'><i class="lnr lnr-user"></i> <span>Графики работы МФЦ</span></a></li>
+                            </ul>
+                        </li>
+
+
+                        
+                    </ul>
+                </div>
+
+
+
+
+
+
+
             </div>
         </nav>
 
         <!-- END NAVBAR -->
-        <!-- LEFT SIDEBAR -->
-        <div id="sidebar-nav" class="sidebar">
-            <div class="sidebar-scroll">
-                <ul class="nav">
-                    <li><a href='@Url.Action("Index","Authorities")'><i class="lnr lnr-home"></i>Список органов власти</a></li>
-                    <li><a href='@Url.Action("Index","Services")'><i class="lnr lnr-home"></i>Список услуг</a></li>
-
-                    <li><a href='@Url.Action("ListEmployees","Employees")'><i class="lnr lnr-home"></i>Список сотрудников</a></li>
-                    <li><a href='@Url.Action("ListAds","Ads")'><i class="lnr lnr-home"></i>Список обьявлений</a></li>
-
-                    @*<li><a href='@Url.Action("Index","KhowBase")'><i class="lnr lnr-rocket"></i><span>База знаний</span></a></li>
-                    <li><a href='@Url.Action("Index","PriceDoc")'><i class="lnr lnr-file-empty"></i><span>Квитанция</span></a></li>*@
-                    @*<li>
-        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-dice"></i><span>Списки СоцЦентра.</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-        <div id="subPages" class="collapse ">
-            <ul class="nav">
-                <li><a href='@Url.Action("ListDou","ListSoc")'>Инормация по ДОУ</a></li>
-                <li><a href='@Url.Action("ListEdv","ListSoc")'>Информация по ЕДВ</a></li>
-                <li><a href='@Url.Action("ListOldPeople","ListSoc")'>Информация по Старожилам</a></li>
-                <li><a href='@Url.Action("ListPayKinder","ListSoc")'>Информация по Ежемесячному пособию по ребенка</a></li>
-            </ul>
-        </div>
-    </li>
-    <li>
-        <a href="#subPagesDopInfo" data-toggle="collapse" class="collapsed"><i class="lnr lnr-magnifier"></i><span>Информация</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-
-        <div id="subPagesDopInfo" class="collapse ">
-            <ul class="nav">
-                <li><a href="ListGor" class="">Участки ГорЖилСервис</a></li>
-                <li><a href="ListDous" class="">Список ДОУ</a></li>
-            </ul>
-        </div>
-    </li>*@
-
-                   
-                </ul>
-            </div>
-        </div>
-        <!-- END LEFT SIDEBAR -->
         <!-- MAIN -->
         <div class="main">
             <!-- MAIN CONTENT -->
@@ -163,13 +162,6 @@
     @Scripts.Render("~/bundles/bootstrap")
 
     @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/slimscroll")
-
-    @Scripts.Render("~/bundles/Theme")
-
-
-
-
 
 
 
@@ -202,7 +194,5 @@
 @*http://dataservice.accuweather.com/currentconditions/v1/289119?apikey=M4jSx5GH0cxoYvyPz1yTfWblshJGmAXe&language=ru-ru*@
 
 
-@section Scripts
-{
 
-}
+
